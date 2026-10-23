@@ -1,0 +1,39 @@
+{
+  "id": "CAS-01",
+  "titre": "Podomètre et programme de marche contre la sédentarité",
+  "vague": 1,
+  "auteur": "Exemple fourni avec l'outil",
+  "cas_limite": false,
+  "description": "Application de smartphone présentée comme un podomètre : elle compte les pas, évalue le niveau de sédentarité et propose un programme de marche avec des notifications pour augmenter progressivement l'activité physique.",
+  "saisie": {
+    "format": "boussole-dm/saisie",
+    "version": 1,
+    "reference_cas": "CAS-01",
+    "description": "Application podomètre qui compte les pas, évalue la sédentarité et propose un programme d'activité physique.",
+    "revendications": [
+      { "support": "boutique", "texte": "Bougez plus, vivez mieux : votre coach d'activité physique pour lutter contre la sédentarité et améliorer votre bien-être." }
+    ],
+    "modules": [
+      {
+        "id": "pas",
+        "nom": "Compteur de pas et programme",
+        "fonction": "Compte les pas, calcule un niveau de sédentarité et propose un programme de marche",
+        "donnees": "Nombre de pas, objectifs de l'utilisateur",
+        "finalite": "Augmenter l'activité physique",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "oui", "Q-5": "oui", "Q-6": ["aucune"] }
+      }
+    ],
+    "reponses": { "IA-1": "non" }
+  },
+  "attendu": {
+    "modules": { "pas": { "qualification": "non_dm", "perimetre": null, "classe": null } },
+    "classe_produit": null,
+    "organisme_notifie": null,
+    "zones_grises": ["ZG-2"],
+    "consequences": []
+  },
+  "justification": [
+    { "point": "Une application de forme physique n'a pas de finalité médicale.", "source": "MDCG 2019-11 rev.1", "reference": "Section 3.1", "extrait": "“software only intended for non-medical purposes […] such as […] wellness or fitness apps, do not qualify as MDSW.”" },
+    { "point": "L'ANSM cite ce cas précis comme « Pas DM ».", "source": "ANSM, qualification des logiciels (mise à jour du 06/01/2026)", "reference": "Exemple « Applications pour prescrire la pratique d'entrainements sportifs ou physiques – Pas DM »", "extrait": "« Une application, présentée comme un podomètre, calcule le nombre de pas sur plusieurs jours. »" }
+  ]
+}

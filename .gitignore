@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+*.log
+# Copies locales de documents sources : on cite les URL officielles, on ne versionne pas les PDF.
+sources/

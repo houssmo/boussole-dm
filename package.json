@@ -1,0 +1,16 @@
+{
+  "name": "boussole-dm",
+  "version": "0.1.0",
+  "description": "Boussole DM : outil pédagogique d'aide à la qualification et à la classification des logiciels selon le règlement (UE) 2017/745. Sans valeur réglementaire.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node tests/valider-regles.js && node --test tests/moteur.test.js && node tests/run.js",
+    "test:donnees": "node tests/valider-regles.js",
+    "test:moteur": "node --test tests/moteur.test.js",
+    "test:cas": "node tests/run.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

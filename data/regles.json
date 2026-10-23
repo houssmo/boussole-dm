@@ -1,0 +1,3918 @@
+{
+  "meta": {
+    "nom": "Boussole DM : règles et sources",
+    "version_donnees": "0.2.0",
+    "mis_a_jour_le": "2026-10-23",
+    "avertissement": "Outil pédagogique, sans valeur réglementaire.",
+    "statuts": [
+      "à valider par l'équipe",
+      "non vérifié"
+    ],
+    "ordre_classes": [
+      "I",
+      "IIa",
+      "IIb",
+      "III"
+    ],
+    "ordre_evaluation": [
+      "qualification",
+      "perimetre",
+      "classification",
+      "consequences",
+      "destination"
+    ],
+    "ordre_evaluation_motif": "Le moteur évalue les étapes dans cet ordre : le contrôle de cohérence de la destination dépend des qualifications, les conséquences dépendent de la classe. L'affichage suit l'ordre des étapes.",
+    "domaines_officiels": [
+      "eur-lex.europa.eu",
+      "health.ec.europa.eu",
+      "imdrf.org",
+      "www.imdrf.org",
+      "ansm.sante.fr"
+    ],
+    "regle_statut": "« à valider par l'équipe » : au moins une source officielle lue, avec extrait exact. « non vérifié » : aucune source lue. Une source sans extrait reste à lire (voir docs/points-a-verifier.md)."
+  },
+  "etapes": [
+    {
+      "id": "destination",
+      "ordre": 1,
+      "titre": "Destination",
+      "description": "Revendications du fabricant et contrôle de cohérence avec les fonctions du logiciel."
+    },
+    {
+      "id": "qualification",
+      "ordre": 2,
+      "titre": "Qualification",
+      "description": "Qualification de chaque module (arbre de décision de MDCG 2019-11, figures 1 et 2)."
+    },
+    {
+      "id": "perimetre",
+      "ordre": 3,
+      "titre": "Périmètre du DM",
+      "description": "Modules dans le DM, modules nécessaires, modules hors périmètre et interfaces."
+    },
+    {
+      "id": "classification",
+      "ordre": 4,
+      "titre": "Classification",
+      "description": "Règle 11, règles d'application et autres règles de l'annexe VIII."
+    },
+    {
+      "id": "consequences",
+      "ordre": 5,
+      "titre": "Conséquences",
+      "description": "Organisme notifié, obligations du fabricant, AI Act."
+    },
+    {
+      "id": "zones_grises",
+      "ordre": 6,
+      "titre": "Zones grises",
+      "description": "Points où les textes laissent un débat, avec les lectures possibles."
+    }
+  ],
+  "qualifications": {
+    "dm_mdr": "Logiciel dispositif médical (MDR)",
+    "dm_ivdr": "Logiciel DM de diagnostic in vitro (IVDR)",
+    "pilote_dm": "Logiciel qui pilote ou influence un DM",
+    "accessoire": "Accessoire d'un dispositif médical",
+    "non_dm": "Hors champ (pas un dispositif médical)"
+  },
+  "perimetres": {
+    "dm": "Dans le dispositif médical",
+    "necessaire": "Nécessaire au fonctionnement du DM (dans le périmètre)",
+    "hors": "Hors périmètre"
+  },
+  "regles": [
+    {
+      "id": "D-1",
+      "etape": "destination",
+      "type": "saisie",
+      "champ_saisie": "revendications",
+      "portee": "produit",
+      "question": "Quelles revendications le fabricant fait-il pour ce logiciel ? Recopiez chaque revendication en indiquant son support (notice, étiquetage, site, boutique d'applications, plaquette, autre).",
+      "aide": "La destination se déduit de ce que le fabricant indique sur l'étiquetage, dans la notice, dans les supports promotionnels ou de vente et dans l'évaluation clinique.",
+      "effets": [],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 2, définition de « intended purpose » (citant l'article 2, point 12, du MDR)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "““Intended purpose” means the use for which a device is intended according to the data supplied by the manufacturer on the label, in the instructions for use or in promotional or sales materials or statements and as specified by the manufacturer in the clinical evaluation”"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Introduction",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« La destination, également appelée revendication, est fixée par le fabricant (l'éditeur) de l'application. Elle est décrite dans la notice, l'étiquetage mais également dans le matériel promotionnel. »"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 2, point 12",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "D-2",
+      "etape": "destination",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "tous": [
+          {
+            "texte": "revendications",
+            "contient_un_de": [
+              "diagnostic",
+              "diagnostiquer",
+              "dépist",
+              "prévention",
+              "prévenir",
+              "surveillance",
+              "surveiller",
+              "suivi médical",
+              "prédiction",
+              "prédire",
+              "pronostic",
+              "traitement",
+              "traiter",
+              "thérapie",
+              "thérapeutique",
+              "atténuer",
+              "soulager",
+              "maladie",
+              "pathologie",
+              "symptôme",
+              "patient",
+              "dose",
+              "posologie",
+              "alerte"
+            ]
+          },
+          {
+            "modules": "aucun",
+            "condition": {
+              "qualification_dans": [
+                "dm_mdr",
+                "dm_ivdr",
+                "accessoire",
+                "pilote_dm"
+              ]
+            }
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "avertissement",
+          "message": "Les revendications emploient un vocabulaire médical, mais aucun module n'a été qualifié comme ayant une finalité médicale. Vérifiez la cohérence : c'est la destination revendiquée qui détermine la qualification."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“It should be noted that the intended purpose, as described by the manufacturer of the software is relevant for the qualification and classification of any device.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Crafting a well-defined and clear intended purpose is paramount for the regulatory compliance and safe use of MDSW. The intended purpose must comprehensively describe all functionalities of the MDSW that serve a medical purpose, leaving no ambiguity regarding its scope and use.”"
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "La liste de mots-clés qui déclenche ce contrôle est un choix pédagogique de l'équipe, pas une règle juridique."
+    },
+    {
+      "id": "D-3",
+      "etape": "destination",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "tous": [
+          {
+            "non": {
+              "texte": "revendications",
+              "contient_un_de": [
+                "diagnostic",
+                "diagnostiquer",
+                "dépist",
+                "prévention",
+                "prévenir",
+                "surveillance",
+                "surveiller",
+                "suivi médical",
+                "prédiction",
+                "prédire",
+                "pronostic",
+                "traitement",
+                "traiter",
+                "thérapie",
+                "thérapeutique",
+                "atténuer",
+                "soulager",
+                "maladie",
+                "pathologie",
+                "symptôme",
+                "patient",
+                "dose",
+                "posologie",
+                "alerte"
+              ]
+            }
+          },
+          {
+            "modules": "au_moins_un",
+            "condition": {
+              "qualification_dans": [
+                "dm_mdr",
+                "dm_ivdr"
+              ]
+            }
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "avertissement",
+          "message": "Un module a une finalité médicale, mais aucune revendication ne la mentionne. La destination doit décrire toutes les fonctionnalités à finalité médicale : c'est une incohérence à corriger."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Crafting a well-defined and clear intended purpose is paramount for the regulatory compliance and safe use of MDSW. The intended purpose must comprehensively describe all functionalities of the MDSW that serve a medical purpose, leaving no ambiguity regarding its scope and use.”"
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "La liste de mots-clés qui déclenche ce contrôle est un choix pédagogique de l'équipe, pas une règle juridique."
+    },
+    {
+      "id": "D-4",
+      "etape": "destination",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "tous": [
+          {
+            "texte": "revendications",
+            "contient_un_de": [
+              "bien-être",
+              "bien être",
+              "non médical",
+              "pas un dispositif médical",
+              "ne remplace pas un avis médical",
+              "lifestyle",
+              "wellness",
+              "forme physique",
+              "fitness"
+            ]
+          },
+          {
+            "modules": "au_moins_un",
+            "condition": {
+              "qualification_dans": [
+                "dm_mdr",
+                "dm_ivdr"
+              ]
+            }
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "bloquant",
+          "message": "Une revendication présente le produit comme « bien-être » ou « non médical », alors qu'un module a une finalité médicale. Cette ambiguïté de la destination peut conduire à une erreur de qualification ou de classification."
+        },
+        {
+          "type": "zone_grise",
+          "id": "ZG-2"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Ambiguities can lead to misclassification, resulting in non-compliance and potential market access issues.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“As set out in Article 7 of MDR and IVDR, this also entails that any claims, relating to the intended medical purpose of their MDSW are supported by appropriate level of clinical evidence.”"
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "La liste de mots-clés qui déclenche ce contrôle est un choix pédagogique de l'équipe, pas une règle juridique."
+    },
+    {
+      "id": "Q-0",
+      "etape": "qualification",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "modules": "au_moins_un",
+        "condition": {
+          "tous": []
+        }
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "info",
+          "message": "La qualification s'analyse module par module, selon la finalité de chacun."
+        }
+      ],
+      "sources": [
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Encadré « Information importante »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Un logiciel doté de plusieurs fonctionnalités ou modules : l'analyse du statut est appliquée pour chacune des fonctionnalités, au vu de la finalité de chacune d'entre elles. »"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Some products may be segregated into a number of modules, where one or a combination of modules may serve a medical or non-medical purpose.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "Q-1",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module est-il un logiciel, c'est-à-dire un ensemble d'instructions qui traite des données d'entrée et produit des données de sortie ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "effets": [
+        {
+          "si": "non",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "non_dm",
+              "motif": "Pas un logiciel au sens du guide : hors du champ de cet outil"
+            },
+            {
+              "type": "fin_module"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 2, définition de « software »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“For the purpose of this guidance, “software” is defined as a set of instructions that processes input data and creates output data.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, étape de décision 1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Decision step 1: if the product is software according to Section 2 (Definitions and Abbreviations) of this guidance, then it may be a MDSW, proceed to decision step 2”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "Q-2",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module pilote-t-il un dispositif médical matériel ou en influence-t-il l'utilisation (le faire fonctionner, modifier son état, le contrôler, ou fournir des informations sur son fonctionnement) ?",
+      "options": [
+        {
+          "valeur": "seul",
+          "libelle": "Oui, et le module n'a pas de finalité médicale propre"
+        },
+        {
+          "valeur": "avec_finalite",
+          "libelle": "Oui, et le module a aussi une finalité médicale propre"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "reponse": "Q-1",
+        "egal": "oui"
+      },
+      "effets": [
+        {
+          "si": "seul",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "pilote_dm",
+              "motif": "Logiciel qui pilote ou influence l'utilisation d'un DM, sans finalité médicale propre : il relève du dispositif piloté"
+            },
+            {
+              "type": "fin_module"
+            }
+          ]
+        },
+        {
+          "si": "avec_finalite",
+          "alors": [
+            {
+              "type": "signal",
+              "gravite": "info",
+              "message": "Le module pilote un DM et a sa propre finalité médicale : il est qualifié de logiciel DM, classé selon sa propre destination, sans pouvoir être dans une classe inférieure à celle du DM piloté."
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-4"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, définition",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The software is intended to drive or influence the use of a (hardware) medical device and does not have or perform a medical purpose on its own, nor does it create information on its own for one or more of the medical purposes described in the definition of a medical device”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.2, note 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“If the software has a medical purpose and also drives or influences a (hardware) medical device or its use, then it is qualified as a MDSW.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, étape de décision 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Decision step 2: if the product is an MDR Annex XVI device, or is an accessory for a medical device 24, or is software driving or influencing the use of a medical device, then it must be considered as part of that device in its regulatory process or independently if it is an accessory.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "Q-3",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module, sans être lui-même un dispositif médical, est-il destiné par le fabricant à être utilisé avec un ou plusieurs dispositifs médicaux précis pour permettre spécifiquement leur utilisation conformément à leur destination, ou pour assister directement leur fonction médicale (accessoire) ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "reponse": "Q-1",
+            "egal": "oui"
+          },
+          {
+            "reponse": "Q-2",
+            "dans": [
+              "non",
+              "avec_finalite"
+            ]
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "accessoire",
+              "motif": "Accessoire d'un dispositif médical : relève du MDR et se traite indépendamment"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 2, définition de « accessory » (citant l'article 2, point 2, du MDR)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "““Accessory for a medical device” means an article which, whilst not being itself a medical device, is intended by its manufacturer to be used together with one or several particular medical device(s) to specifically enable the medical device(s) to be used in accordance with its/their intended purpose(s) or to specifically and directly assist the medical functionality of the medical device(s) in terms of its/their intended purpose(s);”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software that does not meet the definition of a medical device or an in vitro diagnostic medical device (i.e. software that is not MDSW) but is intended by the manufacturer to be an accessory for a medical device, or an in vitro diagnostic medical device, falls respectively under the scope of the Regulation (EU) 2017/745 – MDR or Regulation (EU) 2017/746 – IVDR.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 2, point 2",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "Q-4",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module effectue-t-il sur les données une action autre que le stockage, l'archivage, la communication, la simple recherche ou la compression sans perte ?",
+      "aide": "Une simple mise en forme (embellissement, lisibilité, compatibilité) ne compte pas comme une action sur les données. Une recherche qui contribue à une finalité médicale n'est en revanche plus une « simple recherche ».",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "reponse": "Q-1",
+            "egal": "oui"
+          },
+          {
+            "reponse": "Q-2",
+            "dans": [
+              "non",
+              "avec_finalite"
+            ]
+          },
+          {
+            "reponse": "Q-3",
+            "egal": "non"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "non",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "non_dm",
+              "motif": "Action limitée au stockage, à l'archivage, à la communication, à la simple recherche ou à la compression sans perte (étape 3)"
+            },
+            {
+              "type": "fin_module"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, étape de décision 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Decision step 3: if the software does perform an action on data, or performs an action beyond storage, archival, communication 25, simple search, lossless compression (i.e. using a compression procedure that allows the exact reconstruction of the original data) then it may be a MDSW”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“However, altering the representation of data for embellishment/cosmetic or compatibility purposes does not readily qualify the software as MDSW.”"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "« À retenir »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Cette action doit être différente d'un stockage, une communication, ou une simple recherche telle une base de données ou une bibliothèque numérique intégrant des données dans un but exclusif d'archivage sans les exploiter. »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "Q-5",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Cette action est-elle réalisée au bénéfice de patients individuels ?",
+      "aide": "Ne sont pas au bénéfice de patients individuels : l'agrégation de données de population, les parcours diagnostiques ou thérapeutiques génériques, la littérature, les atlas, les modèles, les études épidémiologiques ou les registres.",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "reponse": "Q-1",
+            "egal": "oui"
+          },
+          {
+            "reponse": "Q-2",
+            "dans": [
+              "non",
+              "avec_finalite"
+            ]
+          },
+          {
+            "reponse": "Q-3",
+            "egal": "non"
+          },
+          {
+            "reponse": "Q-4",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "non",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "non_dm",
+              "motif": "Pas au bénéfice de patients individuels (étape 4)"
+            },
+            {
+              "type": "fin_module"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-5"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, étape de décision 4",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Examples of software which are not considered as being for the benefit of individual patients are those which are intended only to aggregate population data, provide generic diagnostic or treatment pathways (not directed to individual patients), scientific literature, medical […] atlases, models and templates as well as software intended only for epidemiological studies or registers.”",
+          "forme_extrait": "passage coupé par un saut de page et une note de bas de page, signalé par […]"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "« À retenir »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« donner un résultat propre au bénéfice d'un seul patient »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "Q-6",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Quelle finalité médicale le fabricant attribue-t-il à ce module ? (plusieurs réponses possibles)",
+      "aide": "Le niveau de risque n'est pas un critère de qualification. Les libellés français des finalités sont une traduction de travail du guide (en anglais) : à remplacer par le texte de l'article 2, point 1, du MDR.",
+      "options": [
+        {
+          "valeur": "diag_maladie",
+          "libelle": "Diagnostic, prévention, surveillance, prédiction, pronostic, traitement ou atténuation d'une maladie"
+        },
+        {
+          "valeur": "blessure",
+          "libelle": "Diagnostic, surveillance, traitement, atténuation ou compensation d'une blessure ou d'un handicap"
+        },
+        {
+          "valeur": "anatomie",
+          "libelle": "Investigation, remplacement ou modification d'une structure anatomique ou d'un processus ou état physiologique ou pathologique"
+        },
+        {
+          "valeur": "in_vitro",
+          "libelle": "Fourniture d'informations au moyen de l'examen in vitro d'échantillons provenant du corps humain"
+        },
+        {
+          "valeur": "conception",
+          "libelle": "Maîtrise ou assistance de la conception"
+        },
+        {
+          "valeur": "aucune",
+          "libelle": "Aucune de ces finalités (par exemple bien-être, forme physique, gestion administrative)"
+        }
+      ],
+      "choix_multiple": true,
+      "condition": {
+        "tous": [
+          {
+            "reponse": "Q-1",
+            "egal": "oui"
+          },
+          {
+            "reponse": "Q-2",
+            "dans": [
+              "non",
+              "avec_finalite"
+            ]
+          },
+          {
+            "reponse": "Q-3",
+            "egal": "non"
+          },
+          {
+            "reponse": "Q-4",
+            "egal": "oui"
+          },
+          {
+            "reponse": "Q-5",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": {
+            "contient_un_de": [
+              "diag_maladie",
+              "blessure",
+              "anatomie",
+              "conception",
+              "in_vitro"
+            ]
+          },
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "dm_mdr",
+              "motif": "Finalité médicale au sens de l'article 2, point 1, du MDR (étape 5)"
+            }
+          ]
+        },
+        {
+          "si": {
+            "egal_exactement": [
+              "aucune"
+            ]
+          },
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "non_dm",
+              "motif": "Aucune finalité médicale au sens de l'article 2, point 1"
+            },
+            {
+              "type": "fin_module"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-2",
+        "ZG-10"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 2, définition de « medical device » (citant l'article 2, point 1, du MDR)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "““medical device” means any instrument, apparatus, appliance, software, implant, reagent, material or other article intended by the manufacturer to be used, alone or in combination, for human beings for one or more of the following specific medical purposes:”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“In addition, software only intended for non-medical purposes (excluding MDR Annex XVI devices), such as invoicing, staff planning, e-mailing, web or voice messaging, data parsing, word processing, and back-up, wellness or fitness apps, do not qualify as MDSW.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“It must be highlighted that the risk of harm to patients, users of the software, or any other person, related to the use of the software within healthcare, including a possible malfunction is not a criterion on whether the software qualifies as a medical device.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 2, point 1",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "Q-7",
+      "etape": "qualification",
+      "type": "question",
+      "portee": "module",
+      "question": "Sur quelles données reposent les informations produites par ce module ?",
+      "options": [
+        {
+          "valeur": "ivd_seules",
+          "libelle": "Uniquement sur des données issues de dispositifs de diagnostic in vitro"
+        },
+        {
+          "valeur": "mixte_ivd",
+          "libelle": "Sur des données in vitro et d'autres données, la finalité reposant de manière substantielle sur les données in vitro"
+        },
+        {
+          "valeur": "mixte_dm",
+          "libelle": "Sur des données in vitro et d'autres données, la finalité reposant de manière substantielle sur les autres données"
+        },
+        {
+          "valeur": "aucune_ivd",
+          "libelle": "Sur aucune donnée in vitro"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "qualification_dans": [
+          "dm_mdr"
+        ]
+      },
+      "effets": [
+        {
+          "si": "ivd_seules",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "dm_ivdr",
+              "motif": "Informations issues uniquement de DM de diagnostic in vitro : logiciel DM DIV (IVDR)"
+            }
+          ]
+        },
+        {
+          "si": "mixte_ivd",
+          "alors": [
+            {
+              "type": "qualification",
+              "valeur": "dm_ivdr",
+              "motif": "Finalité substantiellement fondée sur des données in vitro : IVDR"
+            },
+            {
+              "type": "zone_grise",
+              "id": "ZG-7"
+            }
+          ]
+        },
+        {
+          "si": "mixte_dm",
+          "alors": [
+            {
+              "type": "zone_grise",
+              "id": "ZG-7"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.4, figure 2, étape 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“If the information provided is based on data obtained solely from in vitro diagnostic medical devices, then the software is an in vitro diagnostic medical device and is therefore an IVD MDSW.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.4, figure 2, étape 3",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Decision Step 3: Is the intended purpose substantially driven by data sources coming from in vitro diagnostic medical devices? If yes, then the applicable legislation is Regulation (EU) 2017/746. If the intended purpose is substantially driven by data sources coming from medical devices, then the applicable legislation is Regulation (EU) 2017/745.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "P-1",
+      "etape": "perimetre",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "qualification_dans": [
+          "dm_mdr",
+          "dm_ivdr",
+          "accessoire",
+          "pilote_dm"
+        ]
+      },
+      "effets": [
+        {
+          "type": "perimetre",
+          "valeur": "dm"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Modules that claim a medical purpose fall within the scope of the Medical Devices Regulations and must comply with the applicable requirements (see Figures 1 and 2). Modules without a medical purpose are not subject to these requirements.”"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Encadré « Information importante »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Un logiciel doté de plusieurs fonctionnalités ou modules : l'analyse du statut est appliquée pour chacune des fonctionnalités, au vu de la finalité de chacune d'entre elles. »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "P-2",
+      "etape": "perimetre",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module sans finalité médicale propre est-il nécessaire au fonctionnement d'un module à finalité médicale (acquisition des données d'entrée, présentation des résultats, fonctions d'utilisation pouvant influer sur la sécurité ou la performance) ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "non_dm"
+            ]
+          },
+          {
+            "modules": "au_moins_un",
+            "condition": {
+              "qualification_dans": [
+                "dm_mdr",
+                "dm_ivdr",
+                "accessoire",
+                "pilote_dm"
+              ]
+            }
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "perimetre",
+              "valeur": "necessaire"
+            }
+          ]
+        },
+        {
+          "si": "non",
+          "alors": [
+            {
+              "type": "perimetre",
+              "valeur": "hors"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-3"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Non-medical functionalities should not be excluded from the MDSW description if they are necessary for the operation of the MDSW;”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Manufacturers must assess the entire MDSW’s architecture and functionality, including its boundary interfaces. In addition to assessing individual modules against medical device qualification criteria, the following must be considered: • How the software acquires input data; • How output data is presented to the user; • Whether features that contribute to the usability or operation of the device (even if not directly medical) could impact safety or performance.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "P-3",
+      "etape": "perimetre",
+      "type": "saisie",
+      "portee": "module",
+      "question": "Comment ce module hors périmètre communique-t-il avec les modules du dispositif médical ? (données échangées, sens, format, fréquence)",
+      "condition": {
+        "perimetre_dans": [
+          "hors"
+        ]
+      },
+      "effets": [
+        {
+          "type": "interface"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“It is the responsibility of the manufacturer to clearly delineate the boundaries and interfaces of the various modules.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“the overall configuration, including the connection system and interoperability aspects, must be demonstrably safe and must not impair the intended performance of the MDSW”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "AP-3.3",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Quelle est la classe du dispositif médical matériel que ce module pilote ou dont il influence l'utilisation ?",
+      "aide": "Un logiciel qui pilote une pompe à perfusion ou un autre dispositif de la règle 12 prend la classe de ce dispositif (le logiciel ne peut pas administrer lui-même une substance).",
+      "options": [
+        {
+          "valeur": "I",
+          "libelle": "Classe I"
+        },
+        {
+          "valeur": "IIa",
+          "libelle": "Classe IIa"
+        },
+        {
+          "valeur": "IIb",
+          "libelle": "Classe IIb"
+        },
+        {
+          "valeur": "III",
+          "libelle": "Classe III"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "un_de": [
+          {
+            "qualification_dans": [
+              "pilote_dm"
+            ]
+          },
+          {
+            "reponse": "Q-2",
+            "egal": "avec_finalite"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "I",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "I"
+            }
+          ]
+        },
+        {
+          "si": "IIa",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIa"
+            }
+          ]
+        },
+        {
+          "si": "IIb",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIb"
+            }
+          ]
+        },
+        {
+          "si": "III",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "III"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-4"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.1, règle d'application 3.3 (première phrase, citée)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“‘Software, which drives or influences the use of a device, shall fall within the same class as the device’”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Therefore, MDSW that both achieves its own intended purpose and also drives or influences the use of a (hardware) device for a medical purpose is classified on its own, based on the intended purpose achieved. In such a case, however, the risk class shall not be lower than the risk class of the hardware medical device.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.2 (règle 12)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“As software devices cannot physically administer and/or remove substances, please refer to the implementation rule 3.3 of Annex VIII for MDSW covered by this rule.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre II, point 3.3",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "AP-3.3b",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr"
+            ]
+          },
+          {
+            "reponse": "Q-2",
+            "egal": "non"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "info",
+          "message": "Logiciel indépendant de tout autre dispositif : il est classé en tant que tel."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.1, règle d'application 3.3 (deuxième phrase, citée)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“‘If software is independent of any other device, it shall be classified in its own right’”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre II, point 3.3",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "AP-ACC",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "qualification_dans": [
+          "accessoire"
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "info",
+          "message": "Accessoire : il est traité indépendamment du dispositif avec lequel il est utilisé."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, étape de décision 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“then it must be considered as part of that device in its regulatory process or independently if it is an accessory”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre II, point 3.2",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. Le point 3.2 de l'annexe VIII (classement des accessoires) est cité de mémoire : à vérifier sur EUR-Lex."
+    },
+    {
+      "id": "R11-1",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module est-il destiné à fournir des informations utilisées pour prendre des décisions à des fins diagnostiques ou thérapeutiques ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "qualification_dans": [
+          "dm_mdr",
+          "accessoire"
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIa"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-1"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, texte de la règle 11 (cité)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software intended to provide information which is used to take decisions with diagnosis or therapeutic purposes is classified as class IIa, except if such decisions have an impact that may cause: death or an irreversible deterioration of a person's state of health, in which case it is in class III; or a serious deterioration of a person's state of health or a surgical intervention, in which case it is classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11a",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The wording “intended to provide information which is used to take decisions with diagnosis or therapeutic purposes” describes, in very general terms, the “mode of action” which is characteristic of all MDSW. Therefore, this sub-rule is generally applicable to all MDSW (excluding those MDSW that have no medical purpose).”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11a",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“a device intended to prevent the risk of illnesses or pathologies by analysing physiological parameters (e.g. placement of the dorsal vertebrae, analysis of arterial stiffness, etc.) can be considered as a device providing information which is used to take decisions with diagnosis purpose (potential detection of pathologies) and in this case is in class IIa.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre III, règle 11",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "R11-2",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Si une décision était prise sur la base d'une information erronée fournie par le module, quelle incidence serait raisonnablement susceptible d'en résulter ?",
+      "options": [
+        {
+          "valeur": "deces",
+          "libelle": "Le décès ou une détérioration irréversible de l'état de santé d'une personne"
+        },
+        {
+          "valeur": "grave",
+          "libelle": "Une détérioration grave de l'état de santé d'une personne ou une intervention chirurgicale"
+        },
+        {
+          "valeur": "aucune",
+          "libelle": "Aucune de ces incidences"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-1",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "deces",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "III"
+            }
+          ]
+        },
+        {
+          "si": "grave",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIb"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-1"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, texte de la règle 11 (cité)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software intended to provide information which is used to take decisions with diagnosis or therapeutic purposes is classified as class IIa, except if such decisions have an impact that may cause: death or an irreversible deterioration of a person's state of health, in which case it is in class III; or a serious deterioration of a person's state of health or a surgical intervention, in which case it is classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11a",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDSW that is intended to provide information which is used to take decisions with diagnosis and therapeutic purposes, is at a higher risk class where such decisions, if based on incorrect information from the MDSW, are reasonably likely to have an impact that may cause:”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Règle 11, note 2",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“For the classification of software, it is needed to consider the intended purpose, intended population (including e.g. diseases to be treated and/or diagnosed), context of use (e.g. intensive care, emergency care, home use) of the software and of the information provided by the software as well as of the possible decisions to be taken.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre III, règle 11",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "R11-T1",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Aide indicative (tableau IMDRF) : quel est l'état de la situation de soins ou du patient ?",
+      "options": [
+        {
+          "valeur": "critique",
+          "libelle": "Situation ou état critique"
+        },
+        {
+          "valeur": "grave",
+          "libelle": "Situation ou état grave"
+        },
+        {
+          "valeur": "non_grave",
+          "libelle": "Situation ou état non grave (tout le reste)"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-1",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The table below, which is intended for illustrative purposes only, may provide operators placing MDSW on the EU market with some useful indicative orientation on the risk class applicable to their products as a result of the application of Rule 11 a of the MDR.”"
+        },
+        {
+          "document": "IMDRF/SaMD WG/N12 FINAL:2014",
+          "cle": "IMDRF-N12",
+          "reference": "Section 5.2 (état de la situation de soins)",
+          "version": "18 septembre 2014",
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf",
+          "langue": "en",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Document IMDRF N12 non lu : le serveur imdrf.org ne répond pas depuis l'environnement de développement. Vérifier les numéros de section 5.1 et 5.2 cités par MDCG 2019-11, annexe III."
+    },
+    {
+      "id": "R11-T2",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Aide indicative (tableau IMDRF) : quelle est l'importance de l'information fournie dans la décision de soins ?",
+      "options": [
+        {
+          "valeur": "traiter",
+          "libelle": "Élevée : traiter ou diagnostiquer"
+        },
+        {
+          "valeur": "orienter",
+          "libelle": "Moyenne : orienter la prise en charge clinique (drives clinical management)"
+        },
+        {
+          "valeur": "informer",
+          "libelle": "Faible : informer la prise en charge clinique (tout le reste)"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-1",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“This table does not take into account MDSW which is Class I.”"
+        },
+        {
+          "document": "IMDRF/SaMD WG/N12 FINAL:2014",
+          "cle": "IMDRF-N12",
+          "reference": "Section 5.1 (importance de l'information)",
+          "version": "18 septembre 2014",
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf",
+          "langue": "en",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Document IMDRF N12 non lu : le serveur imdrf.org ne répond pas depuis l'environnement de développement. Vérifier les numéros de section 5.1 et 5.2 cités par MDCG 2019-11, annexe III."
+    },
+    {
+      "id": "R11-T-critique-traiter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "critique"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "traiter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "III",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe III (catégorie IMDRF IV.i). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-critique-orienter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "critique"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "orienter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIb",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIb (catégorie IMDRF III.i). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-critique-informer",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "critique"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "informer"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF II.i). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-grave-traiter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "traiter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIb",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIb (catégorie IMDRF III.ii). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-grave-orienter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "orienter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF II.ii). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-grave-informer",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "informer"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF I.ii). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-non_grave-traiter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "non_grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "traiter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF II.iii). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-non_grave-orienter",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "non_grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "orienter"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF I.iii). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-T-non_grave-informer",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-T1",
+            "egal": "non_grave"
+          },
+          {
+            "reponse": "R11-T2",
+            "egal": "informer"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe_indicative",
+          "valeur": "IIa",
+          "message": "Tableau indicatif de l'annexe III de MDCG 2019-11 : classe IIa (catégorie IMDRF I.i). Ce tableau oriente ; il ne remplace pas le critère de la règle 11 (question R11-2)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe III, tableau 1 « Classification Guidance on Rule 11 »",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: MDR 2017/745 Sub-rule 11(a), point i., referring above to MDR class III, aligns with IMDRF risk category IV. Sub-rule 11(a), point ii.,, referring above to MDR class IIb, aligns with IMDRF risk category III products mentioned in section 7.2 of the mentioned IMDRF document. The IMDRF risk category II and IMDRF risk category I products are classified as MDR class IIa as per Rule 11.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-3",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Ce module est-il destiné uniquement à surveiller (monitorer) des processus physiologiques ?",
+      "aide": "Un logiciel de surveillance fournit le plus souvent aussi des informations servant à des décisions (sous-règle 11a) ; la sous-règle 11b vise les logiciels destinés uniquement à la surveillance.",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "qualification_dans": [
+          "dm_mdr",
+          "accessoire"
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIa"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, texte de la règle 11 (cité)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software intended to monitor physiological processes is classified as class IIa, except if it is intended for monitoring of vital physiological parameters, where the nature of variations of those parameters is such that it could result in immediate danger to the patient, in which case it is classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11b",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Sub-rule 11b) should therefore be considered as a specific rule for MDSW intended only for monitoring purposes.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre III, règle 11",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "R11-4",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "S'agit-il de surveiller des paramètres physiologiques vitaux, dont la nature des variations est telle qu'elle pourrait entraîner un danger immédiat pour le patient ?",
+      "aide": "Exemples de paramètres vitaux : respiration, fréquence cardiaque, fonctions cérébrales, gaz du sang, pression artérielle, température corporelle.",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-3",
+            "egal": "oui"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIb"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, texte de la règle 11 (cité)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software intended to monitor physiological processes is classified as class IIa, except if it is intended for monitoring of vital physiological parameters, where the nature of variations of those parameters is such that it could result in immediate danger to the patient, in which case it is classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11b",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Vital physiological processes and parameters include, for example, respiration, heart rate, cerebral functions, blood gases, blood pressure and body temperature.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R11-5",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "R11-1",
+            "egal": "non"
+          },
+          {
+            "reponse": "R11-3",
+            "egal": "non"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "classe",
+          "valeur": "I"
+        }
+      ],
+      "zones_grises": [
+        "ZG-1"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, texte de la règle 11 (cité)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“All other software is classified as class I.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11c",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Sub-rule 11c) implies that all other MDSW is classified as class I.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R15",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Le module est-il destiné à la contraception ou à la prévention de la transmission de maladies sexuellement transmissibles ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "tous": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "accessoire"
+            ]
+          },
+          {
+            "reponse": "Q-6",
+            "contient_un_de": [
+              "conception",
+              "diag_maladie",
+              "anatomie"
+            ]
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "IIb"
+            }
+          ]
+        }
+      ],
+      "zones_grises": [
+        "ZG-9"
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.4 (règle 15)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software used for contraception will be classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Règle 15, explication générale",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Devices for fertility monitoring or testing to facilitate conception (and not used in contraception) are not covered by this rule.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "R22",
+      "etape": "classification",
+      "type": "question",
+      "portee": "module",
+      "question": "Le module fait-il partie d'un dispositif thérapeutique dont une fonction diagnostique intégrée détermine de manière significative la prise en charge du patient par le dispositif lui-même (boucle fermée : le dispositif ajuste lui-même la thérapie à partir de son propre diagnostic) ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "condition": {
+        "un_de": [
+          {
+            "qualification_dans": [
+              "dm_mdr",
+              "pilote_dm"
+            ]
+          },
+          {
+            "reponse": "Q-2",
+            "egal": "avec_finalite"
+          }
+        ]
+      },
+      "effets": [
+        {
+          "si": "oui",
+          "alors": [
+            {
+              "type": "classe",
+              "valeur": "III"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.5 (règle 22)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Active therapeutic devices with an integrated or incorporated diagnostic function which significantly determines the patient management by the device, such as closed loop systems or automated external defibrillators, are classified as class III.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe IV",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Cognitive therapy MDSW that includes a diagnostic function which is intended to feed back to the software to determine follow-up therapy, e.g. software adapts treatment of depression based on diagnostic feedback, should be in class III per Rule 22.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Règle 22, explication générale",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Automated or ‘closed-loop’ therapeutic systems are systems in which relevant biological conditions are automatically monitored (uses feedback from physiological sensors) and is used to adjust a therapy in order to maintain or achieve a particular physiological state.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "AUTRES",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "module",
+      "condition": {
+        "qualification_dans": [
+          "dm_mdr",
+          "accessoire",
+          "pilote_dm"
+        ]
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "info",
+          "message": "Le logiciel est un dispositif actif : outre la règle 11, les règles 9, 10, 12, 13, 15 et 22 de l'annexe VIII sont à examiner. Les règles 9, 10 et 12 visent surtout les échanges d'énergie ou de substances ; elles concernent un logiciel essentiellement à travers le dispositif matériel qu'il pilote (règle d'application 3.3)."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“As software is defined as an active device, for the classification of active (hardware) devices, which also includes MDSW providing information for patient management, Rules 9, 10, 11, 12, 13, 15 and 22 of Annex VIII MDR 2017/745 should be considered.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Rules 9, 10, and 12 primarily address risks associated with the exchange of energy or substances between the patient and active diagnostic or therapeutic devices, taking into account various clinical contexts and patient conditions.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 3.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software is also an active device14. Software should be reviewed not only in the context of Rule 1115.”"
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Les règles 9 et 10 ne sont pas posées sous forme de questions : un logiciel les rencontre surtout via le matériel qu'il pilote (question AP-3.3). À compléter par l'équipe si un cas l'exige."
+    },
+    {
+      "id": "AP-3.5",
+      "etape": "classification",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "modules": "au_moins_un",
+        "condition": {
+          "perimetre_dans": [
+            "dm",
+            "necessaire"
+          ]
+        }
+      },
+      "effets": [
+        {
+          "type": "agregation_classes",
+          "methode": "maximum"
+        },
+        {
+          "type": "signal",
+          "gravite": "info",
+          "message": "Quand plusieurs règles ou sous-règles s'appliquent au même dispositif, la plus stricte détermine la classe. Pour un produit en plusieurs modules, voir la zone grise ZG-8."
+        },
+        {
+          "type": "zone_grise",
+          "id": "ZG-8"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.1, règle d'application 3.5 (citée)",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“‘If several rules, or if, within the same rule, several sub-rules, apply to the same device based on the device’s intended purpose, the strictest rule and sub-rule resulting in higher classification will apply’”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 3.2, « How to use the rules »",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The characteristic or combination of characteristics in accordance with the intended purpose of the device that falls into the highest class determines the class for the device as a whole.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe VIII, chapitre II, point 3.5",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "K-I",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "classe": "I"
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "PROC-I"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphe 7",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "K-IIa",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "classe": "IIa"
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "PROC-II-III"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphe 6",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "K-IIb",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "classe": "IIb"
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "PROC-II-III"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphe 4",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "K-III",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "classe": "III"
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "PROC-II-III"
+        },
+        {
+          "type": "consequence",
+          "id": "PROC-III-CLIN"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphe 3",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "K-IVDR",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "modules": "au_moins_un",
+        "condition": {
+          "qualification_dans": [
+            "dm_ivdr"
+          ]
+        }
+      },
+      "effets": [
+        {
+          "type": "signal",
+          "gravite": "bloquant",
+          "message": "Au moins un module relève de l'IVDR. Sa classification suit l'annexe VIII de l'IVDR (classes A à D) et le guide MDCG 2020-16, que cet outil ne couvre pas : aucune classe n'est calculée pour ce module."
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 5.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“All implementing rules in Annex VIII of Regulation (EU) 2017/746 shall be considered. See also MDCG 2020-16 for the general principles of in vitro diagnostic medical device classification.”"
+        },
+        {
+          "document": "ANSM, « Impact des nouveaux règlements européens sur la classification des logiciels »",
+          "cle": "ANSM-CLASSIF",
+          "reference": "Section IVDR",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/impact-des-nouveaux-reglements-europeens-sur-la-classification-des-logiciels",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« En application des règles de classification et de leur répartition, les logiciels répondant à la définition de DMDIV devront passer en classe B voire C ou D. »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "K-OBL",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "modules": "au_moins_un",
+        "condition": {
+          "perimetre_dans": [
+            "dm"
+          ]
+        }
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "OBL-GEN"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-SMQ"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-CLIN"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-DOC"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-PRRC"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-UDI"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-SAC"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-VIG"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-CYBER"
+        },
+        {
+          "type": "consequence",
+          "id": "OBL-CE"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Irrespective of the class of the device, all devices must comply with all relevant obligations of the MDR. However, some requirements depend on the device classification.”"
+        },
+        {
+          "document": "ANSM, « Je qualifie mon logiciel ou mon application de DM ou DMDIV, quelles sont les conséquences ? »",
+          "cle": "ANSM-CONSEQ",
+          "reference": "Introduction",
+          "version": "publiée le 21/09/2022",
+          "url": "https://ansm.sante.fr/documents/reference/je-qualifie-mon-logiciel-ou-mon-application-de-dm-ou-dmdiv-quelles-sont-les-consequences-et-la-marche-a-suivre-pour-commercialiser-mon-produit",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Si un logiciel est qualifié de DM ou DM DIV, son éditeur devient fabricant de DM ou DMDIV »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "IA-1",
+      "etape": "consequences",
+      "type": "question",
+      "portee": "produit",
+      "question": "Le produit intègre-t-il un système d'intelligence artificielle, c'est-à-dire un système automatisé qui, à partir des entrées qu'il reçoit, déduit comment générer des sorties (prédictions, contenus, recommandations ou décisions) ?",
+      "options": [
+        {
+          "valeur": "oui",
+          "libelle": "Oui"
+        },
+        {
+          "valeur": "non",
+          "libelle": "Non"
+        }
+      ],
+      "choix_multiple": false,
+      "effets": [],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 1 (citant l'article 3, point 1, de l'AI Act)",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The AI Act (AIA) defines an AI system in Article 3(1) as a machine-based system that is designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments.”"
+        },
+        {
+          "document": "Règlement (UE) 2024/1689 (AI Act)",
+          "cle": "AIA",
+          "reference": "Article 3, point 1",
+          "version": "Version consolidée FR du 27/07/2026 (à confirmer)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02024R1689-20260727",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "IA-2",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "tous": [
+          {
+            "reponse": "IA-1",
+            "egal": "oui"
+          },
+          {
+            "classe_dans": [
+              "IIa",
+              "IIb",
+              "III"
+            ]
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "IA-HAUT-RISQUE"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“A MDAI is considered a high-risk AI system under Article 6(1) AIA if it meets both of the following conditions:”"
+        },
+        {
+          "document": "Règlement (UE) 2024/1689 (AI Act)",
+          "cle": "AIA",
+          "reference": "Article 6, paragraphe 1 ; annexe I, section A",
+          "version": "Version consolidée FR du 27/07/2026 (à confirmer)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02024R1689-20260727",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "IA-3",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "tous": [
+          {
+            "reponse": "IA-1",
+            "egal": "oui"
+          },
+          {
+            "classe_dans": [
+              "I"
+            ]
+          }
+        ]
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "IA-CLASSE-I"
+        },
+        {
+          "type": "zone_grise",
+          "id": "ZG-6"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2024/1689 (AI Act)",
+          "cle": "AIA",
+          "reference": "Article 6, paragraphe 1",
+          "version": "Version consolidée FR du 27/07/2026 (à confirmer)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02024R1689-20260727",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "IA-4",
+      "etape": "consequences",
+      "type": "deduction",
+      "portee": "produit",
+      "condition": {
+        "reponse": "IA-1",
+        "egal": "oui"
+      },
+      "effets": [
+        {
+          "type": "consequence",
+          "id": "IA-INDEP"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 4",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The application of Article 5 AIA, prohibited AI practices and Article 50 AIA transparency obligations for providers and deployers of certain AI systems does not depend on the MDR/IVDR classification.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    }
+  ],
+  "consequences": [
+    {
+      "id": "PROC-I",
+      "titre": "Classe I : pas d'organisme notifié",
+      "texte": "Pour un logiciel de classe I non stérile, sans fonction de mesure et qui n'est pas un instrument chirurgical réutilisable, le fabricant évalue lui-même la conformité : aucun organisme notifié n'intervient. Les annexes I (exigences générales), II et III (documentation technique) s'appliquent dans tous les cas. Les sous-classes Is, Im et Ir font intervenir un organisme notifié.",
+      "organisme_notifie": false,
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.2",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Annex I (general safety and performance requirements) and Annexes II (technical documentation) and III (technical documentation on post-market surveillance) apply to all devices regardless of class.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“In addition, and according to Article 52(7)(a), (b) and (c), Class I devices can be further subdivided into Is – sterile condition, Im – measuring function and Ir – reusable surgical.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphe 7",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. Le détail de la procédure (article 52, paragraphe 7) reste à lire sur EUR-Lex. À vérifier : un logiciel peut-il avoir une « fonction de mesure » au sens de la classe Im ?"
+    },
+    {
+      "id": "PROC-II-III",
+      "titre": "Classes IIa, IIb et III : intervention d'un organisme notifié",
+      "texte": "La conformité est évaluée par un organisme notifié, dont l'intervention croît avec la classe. Le fabricant choisit parmi les procédures des annexes IX à XI prévues pour la classe du dispositif.",
+      "organisme_notifie": true,
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.2",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Demonstrating conformity is in the first instance the responsibility of the manufacturer and for most devices classes the conformity is then assessed by a notified body. The higher the class of the device, the greater the involvement of a notified body in conformity assessment.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.2",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Further relevant conformity assessment procedures (laid down in Annexes IX to XI) will depend on the class of the device. For some classes, the manufacturer has a choice of more than one procedure. Conformity assessment is described in MDR Article 52.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 52, paragraphes 3 à 6",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. La procédure précise par classe (annexes IX, X, XI) est à recopier de l'article 52 du MDR sur EUR-Lex."
+    },
+    {
+      "id": "PROC-III-CLIN",
+      "titre": "Classe III : investigation clinique avant mise sur le marché",
+      "texte": "Pour les dispositifs de classe III, une investigation clinique avant mise sur le marché est en principe obligatoire, sauf exceptions (modification d'un dispositif existant, équivalence démontrée, exemptions de l'article 61, paragraphe 6, point b)).",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.3",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“For implantable devices and class III devices, a premarket clinical investigation is compulsory, with some exceptions such as modifications of an existing device,”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-GEN",
+      "titre": "Obligations communes à toutes les classes",
+      "texte": "Respecter les exigences générales de sécurité et de performance (annexe I), y compris les informations à fournir ; être soumis à la vigilance ; porter le marquage CE ; recevoir un IUD et être enregistré dans la base électronique.",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“meet the general safety and performance requirements, including the requirements regarding the information to be supplied by the manufacturer (Annex I of the MDR);”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-SMQ",
+      "titre": "Démarche qualité et gestion des risques",
+      "texte": "Mettre en place une démarche qualité, réaliser une analyse de risque et s'appuyer sur les normes harmonisées (ISO 13485, ISO 14971, IEC 62304, IEC 62366) ou sur des référentiels au moins équivalents.",
+      "sources": [
+        {
+          "document": "ANSM, « Je qualifie mon logiciel ou mon application de DM ou DMDIV, quelles sont les conséquences ? »",
+          "cle": "ANSM-CONSEQ",
+          "reference": "Liste des obligations",
+          "version": "publiée le 21/09/2022",
+          "url": "https://ansm.sante.fr/documents/reference/je-qualifie-mon-logiciel-ou-mon-application-de-dm-ou-dmdiv-quelles-sont-les-consequences-et-la-marche-a-suivre-pour-commercialiser-mon-produit",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Mettre en place une démarche qualité »"
+        },
+        {
+          "document": "ANSM, « Je qualifie mon logiciel ou mon application de DM ou DMDIV, quelles sont les conséquences ? »",
+          "cle": "ANSM-CONSEQ",
+          "reference": "Liste des obligations",
+          "version": "publiée le 21/09/2022",
+          "url": "https://ansm.sante.fr/documents/reference/je-qualifie-mon-logiciel-ou-mon-application-de-dm-ou-dmdiv-quelles-sont-les-consequences-et-la-marche-a-suivre-pour-commercialiser-mon-produit",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Réaliser une analyse de risque et constituer une documentation technique »"
+        },
+        {
+          "document": "ANSM, « Je qualifie mon logiciel ou mon application de DM ou DMDIV, quelles sont les conséquences ? »",
+          "cle": "ANSM-CONSEQ",
+          "reference": "Liste des obligations",
+          "version": "publiée le 21/09/2022",
+          "url": "https://ansm.sante.fr/documents/reference/je-qualifie-mon-logiciel-ou-mon-application-de-dm-ou-dmdiv-quelles-sont-les-consequences-et-la-marche-a-suivre-pour-commercialiser-mon-produit",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Si ces normes ne sont pas suivies, le fabricant doit, d'une part, le justifier, d'autre part, appliquer des référentiels au moins équivalents. »"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 10",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "OBL-CLIN",
+      "titre": "Évaluation clinique",
+      "texte": "Réaliser une évaluation clinique, quelle que soit la classe. Pour un logiciel, les preuves cliniques reposent sur trois composantes : l'association clinique valide (validité scientifique), la performance technique et la performance clinique.",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.3",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“This includes carrying out a clinical evaluation (MDR Article 5 (3), MDR Article 61, MDR Annex XIV.”"
+        },
+        {
+          "document": "MDCG 2020-1, Guidance on clinical evaluation (MDR) / performance evaluation (IVDR) of medical device software",
+          "cle": "MDCG2020-1",
+          "reference": "Section 4",
+          "version": "mars 2020",
+          "url": "https://health.ec.europa.eu/system/files/2020-09/md_mdcg_2020_1_guidance_clinic_eva_md_software_en_0.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Three key components should be taken into account when compiling CLINICAL EVIDENCE for every MDSW”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-DOC",
+      "titre": "Documentation technique",
+      "texte": "Établir la documentation technique (annexes II et III), qui doit indiquer la classe de risque et la justification des règles de classification appliquées.",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The technical documentation3 to be drawn up by the manufacturer must include the risk class of the device and the justification for the classification rule(s) applied in accordance with Annex VIII of the MDR.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-PRRC",
+      "titre": "Personne chargée de veiller au respect de la réglementation",
+      "texte": "Disposer d'au moins une personne chargée de veiller au respect de la réglementation (PRRC).",
+      "sources": [
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Article 15",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "non vérifié",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. Aucun guide lu ne décrit cette obligation : l'article 15 du MDR est cité de mémoire."
+    },
+    {
+      "id": "OBL-UDI",
+      "titre": "IUD et enregistrement",
+      "texte": "Attribuer au dispositif un identifiant unique (IUD) et l'enregistrer dans la base électronique (EUDAMED).",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“be assigned a Unique Device Identifier (UDI) number and be registered in the electronic system, in accordance with MDR Article 29;”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-SAC",
+      "titre": "Surveillance après commercialisation",
+      "texte": "Classe I : rapport de surveillance après commercialisation (article 85), communiqué aux autorités sur demande. Classes IIa, IIb et III : rapport périodique actualisé de sécurité (PSUR, article 86), mis à jour au moins tous les deux ans en classe IIa et au moins chaque année en classes IIb et III.",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.4",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“For class I devices, including sterile, those with a measuring function and the reusable surgical instruments, the manufacturer must prepare and maintain a post-market surveillance report (MDR Article 85), which must be made available to the competent authorities on request.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.4",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“This report must be updated at least annually for class IIb and III devices and at least every two years for class IIa devices.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-VIG",
+      "titre": "Vigilance",
+      "texte": "Mettre en place un système de vigilance capable de gérer les incidents déclarés, les actions de sécurité et la diffusion de versions logicielles correctives.",
+      "sources": [
+        {
+          "document": "ANSM, « Je qualifie mon logiciel ou mon application de DM ou DMDIV, quelles sont les conséquences ? »",
+          "cle": "ANSM-CONSEQ",
+          "reference": "Liste des obligations",
+          "version": "publiée le 21/09/2022",
+          "url": "https://ansm.sante.fr/documents/reference/je-qualifie-mon-logiciel-ou-mon-application-de-dm-ou-dmdiv-quelles-sont-les-consequences-et-la-marche-a-suivre-pour-commercialiser-mon-produit",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Mettre en place un système de vigilance »"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“be subject to the reporting requirements under the medical device vigilance system;”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "OBL-CYBER",
+      "titre": "Cybersécurité",
+      "texte": "Satisfaire aux exigences générales de l'annexe I relatives à la cybersécurité, avant et après la mise sur le marché.",
+      "sources": [
+        {
+          "document": "MDCG 2019-16 rev.1, Guidance on cybersecurity for medical devices",
+          "cle": "MDCG2019-16",
+          "reference": "Section 1.2",
+          "version": "rev.1, juillet 2020",
+          "url": "https://health.ec.europa.eu/system/files/2022-01/md_cybersecurity_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The primary purpose of this document is to provide manufacturers with guidance on how to fulfil all the relevant essential requirements of Annex I to the MDR and IVDR with regard to cybersecurity.”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Annexe I, point 17",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. Numéros des points de l'annexe I du MDR (17.2, 17.4) à confirmer sur EUR-Lex."
+    },
+    {
+      "id": "OBL-CE",
+      "titre": "Marquage CE",
+      "texte": "Apposer le marquage CE après la déclaration UE de conformité.",
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 2.1",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“be CE marked (except custom-made devices and devices intended for clinical investigation,”"
+        },
+        {
+          "document": "Règlement (UE) 2017/745 (MDR)",
+          "cle": "MDR",
+          "reference": "Articles 19 et 20",
+          "version": "Version consolidée FR du 01/01/2026 (version courante à confirmer sur EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02017R0745-20260101",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement."
+    },
+    {
+      "id": "IA-HAUT-RISQUE",
+      "titre": "AI Act : système d'IA à haut risque",
+      "texte": "Un système d'IA qui est lui-même un dispositif médical (ou qui en est un composant de sécurité), et qui est soumis à une évaluation de la conformité par un organisme notifié, est un système d'IA à haut risque au sens de l'article 6, paragraphe 1, de l'AI Act. La classe MDR ne change pas pour autant. Selon le guide de juin 2025, ces obligations s'appliquent à partir du 2 août 2027.",
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“the MDAI is subject to a third-party conformity assessment by a notified body in accordance with the MDR/IVDR (See table 1 below).”"
+        },
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 4",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Therefore, the AIA does not impact the risk classification of medical devices or in vitro diagnostic medical devices (IVDs) under the MDR or IVDR.”"
+        },
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Section sur l'application dans le temps",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The date of application of obligations for “Annex I high-risk AI systems” is 2 August 2027,”"
+        },
+        {
+          "document": "Règlement (UE) 2024/1689 (AI Act)",
+          "cle": "AIA",
+          "reference": "Article 6, paragraphe 1 ; article 113",
+          "version": "Version consolidée FR du 27/07/2026 (à confirmer)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02024R1689-20260727",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. EUR-Lex affiche une version consolidée de l'AI Act au 27/07/2026, postérieure au guide : vérifier que la date du 2 août 2027 n'a pas été modifiée."
+    },
+    {
+      "id": "IA-CLASSE-I",
+      "titre": "AI Act : logiciel de classe I",
+      "texte": "Un logiciel de classe I (non stérile, sans fonction de mesure) n'est pas évalué par un organisme notifié : les conditions de l'article 6, paragraphe 1, de l'AI Act ne sont pas remplies.",
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "IA-INDEP",
+      "titre": "AI Act : obligations indépendantes de la classe",
+      "texte": "Quelle que soit la classe MDR, les pratiques d'IA interdites (article 5) et les obligations de transparence (article 50) de l'AI Act sont à examiner.",
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 4",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The application of Article 5 AIA, prohibited AI practices and Article 50 AIA transparency obligations for providers and deployers of certain AI systems does not depend on the MDR/IVDR classification.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    }
+  ],
+  "zones_grises": [
+    {
+      "id": "ZG-1",
+      "titre": "Règle 11 : presque tout logiciel DM en IIa, ou de la place pour la classe I ?",
+      "description": "Le guide présente la sous-règle 11a comme applicable de manière générale à tout logiciel DM, ce qui place la plupart d'entre eux au moins en classe IIa. Ses propres exemples classent pourtant certains logiciels DM en classe I (sous-règle 11c).",
+      "lectures": [
+        {
+          "lecture": "Lecture large : tout logiciel DM fournit des informations servant à des décisions diagnostiques ou thérapeutiques, donc la classe IIa est un plancher.",
+          "fondement": "MDCG 2019-11, section 4.2.1, sous-règle 11a ; ANSM, impact sur la classification"
+        },
+        {
+          "lecture": "Lecture par la finalité : un logiciel DM dont la finalité n'est ni de fournir des informations pour une décision ni de surveiller reste en classe I (exemples : aide à la conception, aide à la communication).",
+          "fondement": "MDCG 2019-11, annexe IV ; MDCG 2021-24, règle 11"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11a",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Therefore, this sub-rule is generally applicable to all MDSW (excluding those MDSW that have no medical purpose).”"
+        },
+        {
+          "document": "ANSM, « Impact des nouveaux règlements européens sur la classification des logiciels »",
+          "cle": "ANSM-CLASSIF",
+          "reference": "Section MDR",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/impact-des-nouveaux-reglements-europeens-sur-la-classification-des-logiciels",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Ainsi, depuis le 26 mai 2021, une grande partie des logiciels ayant le statut de DM relèvent au minimum de la classe IIa, voire IIb ou III en fonction de l'impact lié à leur utilisation sur le patient. »"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe IV",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“This MDSW app should be classified as class I per Rule 11c.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-2",
+      "titre": "Bien-être, forme physique ou prévention d'une maladie ?",
+      "description": "Les applications de bien-être ou de forme physique ne sont pas des DM. La prévention du risque de maladie par l'analyse de paramètres physiologiques relève en revanche de la règle 11 (classe IIa). L'ANSM écarte aussi des applications qui revendiquent une réduction du risque pour la santé.",
+      "lectures": [
+        {
+          "lecture": "Hors champ : l'application vise le bien-être, l'activité physique ou l'équilibre alimentaire, même si elle évoque une baisse du risque pour la santé ou s'adresse à des patients.",
+          "fondement": "MDCG 2019-11, section 3.1 ; ANSM, exemples « Pas DM »"
+        },
+        {
+          "lecture": "DM : l'application analyse des paramètres physiologiques d'une personne pour prévenir ou détecter une pathologie déterminée.",
+          "fondement": "MDCG 2019-11, section 4.2.1, sous-règle 11a"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“In addition, software only intended for non-medical purposes (excluding MDR Annex XVI devices), such as invoicing, staff planning, e-mailing, web or voice messaging, data parsing, word processing, and back-up, wellness or fitness apps, do not qualify as MDSW.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.1, sous-règle 11a",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“a device intended to prevent the risk of illnesses or pathologies by analysing physiological parameters (e.g. placement of the dorsal vertebrae, analysis of arterial stiffness, etc.) can be considered as a device providing information which is used to take decisions with diagnosis purpose (potential detection of pathologies) and in this case is in class IIa.”"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Exemple « Applications pour prescrire la pratique d'entrainements sportifs ou physiques – Pas DM »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Le fabricant démontre que marcher un peu plus chaque jour ou pratiquer une activité physique aboutit à une meilleure qualité de sommeil et de bien-être général, en diminuant un éventuel risque sur la santé d'un sujet sain ou pathologique. Cette démonstration n'apporte pas d'éléments permettant de justifier d'une finalité médicale. »"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-3",
+      "titre": "Modules sans finalité médicale propre : dans le DM ou à côté ?",
+      "description": "Le même guide dit que les modules sans finalité médicale ne sont pas soumis aux exigences, mais aussi que les fonctions non médicales nécessaires au fonctionnement du logiciel DM ne doivent pas être exclues de sa description.",
+      "lectures": [
+        {
+          "lecture": "Hors du DM : le module n'a pas de finalité médicale, il échappe aux exigences ; seule l'interface est maîtrisée.",
+          "fondement": "MDCG 2019-11, section 7, premier alinéa"
+        },
+        {
+          "lecture": "Dans le périmètre : le module est nécessaire au fonctionnement du logiciel DM, il entre dans sa description et dans l'évaluation de sa sécurité et de sa performance.",
+          "fondement": "MDCG 2019-11, section 7, fonctions non médicales essentielles"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Modules that claim a medical purpose fall within the scope of the Medical Devices Regulations and must comply with the applicable requirements (see Figures 1 and 2). Modules without a medical purpose are not subject to these requirements.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Non-medical functionalities should not be excluded from the MDSW description if they are necessary for the operation of the MDSW;”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-4",
+      "titre": "Logiciel qui pilote un DM : composant, accessoire ou logiciel DM à part entière ?",
+      "description": "Le guide MDCG le rattache au dispositif « comme partie ou composant, ou comme accessoire », et en fait un logiciel DM s'il a sa propre finalité médicale. L'ANSM le présente comme un accessoire.",
+      "lectures": [
+        {
+          "lecture": "Accessoire ou composant du dispositif piloté, dans la même classe que lui (règle d'application 3.3).",
+          "fondement": "MDCG 2019-11, sections 3.3 et 4.1 ; ANSM"
+        },
+        {
+          "lecture": "Logiciel DM classé selon sa propre finalité, sans pouvoir descendre sous la classe du matériel, s'il a aussi une finalité médicale propre.",
+          "fondement": "MDCG 2019-11, section 4.1"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.3, note",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Note: Software that is driving or influencing the use of a medical device is covered by the medical devices regulations either as a part/component of a device or as an accessory for a medical device.”"
+        },
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Encadré « Information importante »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Un logiciel qui pilote ou influence l'utilisation d'un DM ou d'un DM DIV est considéré comme un accessoire de dispositif médical (hardware) »"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“In such a case, however, the risk class shall not be lower than the risk class of the hardware medical device.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-5",
+      "titre": "Au bénéfice d'un patient ou de l'organisation des soins ?",
+      "description": "Un indicateur calculé pour piloter un service n'est pas un DM ; un score de risque calculé pour un patient afin de déclencher des soins en est un. Les outils entre les deux (tableaux de bord de services cliniques, scores de population) se discutent.",
+      "lectures": [
+        {
+          "lecture": "Hors champ : le logiciel améliore l'organisation (indicateurs d'activité, de délais, de qualité) sans résultat propre à un patient.",
+          "fondement": "MDCG 2019-11, annexe II, exemple 1"
+        },
+        {
+          "lecture": "DM : le logiciel calcule pour un patient un score qui déclenche une prise en charge.",
+          "fondement": "MDCG 2019-11, annexe II, exemple 2"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe II, exemple 1",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Step 4 is answered “no” as the software does not perform this action for the benefit of individual patients.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe II, exemple 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDSW intended to generate a risk score in order to trigger care processes to help reduce ICU transfers, readmissions, adverse events and length of stay.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-6",
+      "titre": "IA dans un logiciel de classe I : uniquement les obligations générales ?",
+      "description": "Un logiciel de classe I (sans organisme notifié) ne remplit pas les conditions de l'article 6, paragraphe 1. Reste à savoir si un autre cas de haut risque de l'AI Act (annexe III) peut s'appliquer.",
+      "lectures": [
+        {
+          "lecture": "Pas de haut risque via le MDR ; seules les obligations indépendantes de la classe (articles 5 et 50) s'appliquent.",
+          "fondement": "MDCG 2025-6, questions 2 et 4"
+        },
+        {
+          "lecture": "Examen complémentaire : un usage visé par l'annexe III de l'AI Act pourrait rendre le système à haut risque indépendamment du MDR.",
+          "fondement": "AI Act, article 6, paragraphe 2, et annexe III (non lus)"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2025-6 / AIB 2025-1, Interplay between the MDR & IVDR and the Artificial Intelligence Act (AIA)",
+          "cle": "MDCG2025-6",
+          "reference": "Question 2, tableau 1",
+          "version": "juin 2025",
+          "url": "https://health.ec.europa.eu/system/files/2025-06/mdcg_2025-6_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+        },
+        {
+          "document": "Règlement (UE) 2024/1689 (AI Act)",
+          "cle": "AIA",
+          "reference": "Article 6, paragraphe 2 ; annexe III",
+          "version": "Version consolidée FR du 27/07/2026 (à confirmer)",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:02024R1689-20260727",
+          "langue": "fr",
+          "consulte_le": null,
+          "extrait": null
+        }
+      ],
+      "statut": "non vérifié",
+      "note_verification": "Texte du règlement non lu : EUR-Lex inaccessible depuis l'environnement de développement (défi anti-robot bloqué). L'extrait du guide MDCG qui cite la disposition fait foi en attendant ; recopier l'extrait français du règlement. La seconde lecture repose sur l'AI Act, non lu (EUR-Lex inaccessible) : à vérifier avant de la présenter."
+    },
+    {
+      "id": "ZG-7",
+      "titre": "Données in vitro et autres données : MDR ou IVDR ?",
+      "description": "Quand un logiciel combine des résultats in vitro et d'autres données, le guide demande de pondérer les sources selon leur importance pour la destination. Cette pondération est qualitative, donc discutable.",
+      "lectures": [
+        {
+          "lecture": "IVDR : les données in vitro sont décisives pour le résultat (exemple : score de risque de trisomie fondé sur des marqueurs sériques et une mesure échographique).",
+          "fondement": "MDCG 2019-11, annexe II, exemple 3"
+        },
+        {
+          "lecture": "MDR : les données issues de DM sont décisives et les résultats in vitro accessoires (exemple : score de risque en réanimation).",
+          "fondement": "MDCG 2019-11, annexe II, exemple 2"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.4, note 26",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“A qualitative approach is intended to drive the weighting of data. The weighing aims to assess the contribution of each data towards achieving the result.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Annexe II, exemple 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“as the data received from the in vitro diagnostic medical device is not deemed decisive for the overall calculation result (output) achieved by the MDSW”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-8",
+      "titre": "Produit en plusieurs modules : une classe pour tout ou une classe par module ?",
+      "description": "La règle d'application 3.5 retient la règle la plus stricte pour un même dispositif. Mais un produit peut aussi être découpé : chaque module DM est alors évalué selon sa propre classe.",
+      "lectures": [
+        {
+          "lecture": "Une seule classe : la plus élevée des modules, appliquée au produit entier.",
+          "fondement": "MDR, annexe VIII, point 3.5 ; MDCG 2021-24, section 3.2"
+        },
+        {
+          "lecture": "Une classe par module : chaque module DM suit l'évaluation de la conformité de sa propre classe, ce qui suppose de délimiter clairement les modules.",
+          "fondement": "MDCG 2019-11, section 7 ; MDCG 2021-24, exemple pratique de la section 3.2"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Section 3.2, exemple pratique",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“The clear conclusion here is that the manufacturer would have a choice of applying class IIa to the whole device or carrying out separate conformity assessment procedures for the cannula on one hand and the tubing and collector on the other hand.”"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 7",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Where such modules meet the definition of a medical device under the Medical Devices Regulation (MDR) or In Vitro Diagnostic Regulation (IVDR), they are considered MDSW and are subject to conformity assessment based on their individual risk classification.”"
+        }
+      ],
+      "statut": "à valider par l'équipe",
+      "note_verification": "L'exemple pratique de MDCG 2021-24 porte sur un dispositif matériel (système de drainage) ; sa transposition à un logiciel modulaire est une interprétation de l'équipe."
+    },
+    {
+      "id": "ZG-9",
+      "titre": "Application de fertilité : conception (classe I) ou contraception (classe IIb) ?",
+      "description": "Une même application de suivi du cycle peut servir à concevoir ou à éviter une grossesse. Le guide classe en I l'aide à la conception et en IIb le logiciel utilisé pour la contraception.",
+      "lectures": [
+        {
+          "lecture": "Classe I (sous-règle 11c) : l'application est destinée à aider la conception.",
+          "fondement": "MDCG 2019-11, annexe IV ; MDCG 2021-24, règle 15"
+        },
+        {
+          "lecture": "Classe IIb (règle 15) : l'application est revendiquée, ou utilisée de fait selon sa présentation, pour la contraception.",
+          "fondement": "MDCG 2019-11, section 4.2.4 ; MDCG 2021-24, règle 15"
+        }
+      ],
+      "sources": [
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 4.2.4",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Software used for contraception will be classified as class IIb.”"
+        },
+        {
+          "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
+          "cle": "MDCG2021-24",
+          "reference": "Règle 15",
+          "version": "rev.1, avril 2026",
+          "url": "https://health.ec.europa.eu/document/download/cbb19821-a517-4e13-bf87-fdc6ddd1782e_en?filename=mdcg_2021-24_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“Devices for fertility monitoring or testing to facilitate conception (and not used in contraception) are not covered by this rule.”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "ZG-10",
+      "titre": "Suivi de l'observance : DM ou non ?",
+      "description": "L'ANSM juge que le suivi de l'observance et les rappels de prise ne sont pas une finalité médicale. Le guide MDCG qualifie pourtant de logiciel DM un suivi d'observance qui recommande des ajustements du traitement et influence l'utilisation d'un inhalateur.",
+      "lectures": [
+        {
+          "lecture": "Pas DM : le logiciel se limite à rappeler les prises et à suivre l'observance.",
+          "fondement": "ANSM, exemple « Logiciel et application d'observance – Pas DM »"
+        },
+        {
+          "lecture": "DM : le logiciel exploite des données du patient pour recommander des ajustements du traitement, ou influence l'utilisation d'un DM.",
+          "fondement": "MDCG 2019-11, section 3.2, note 2"
+        }
+      ],
+      "sources": [
+        {
+          "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+          "cle": "ANSM-QUALIF",
+          "reference": "Exemple « Logiciel et application d'observance – Pas DM »",
+          "version": "mise à jour du 06/01/2026",
+          "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+          "langue": "fr",
+          "consulte_le": "2026-10-23",
+          "extrait": "« Le suivi de l'observance d'un patient, la notification de rappels de prise de médicaments ne constitue pas une finalité médicale au sens de l'article 2 du Règlement 2017/745. »"
+        },
+        {
+          "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+          "cle": "MDCG2019-11",
+          "reference": "Section 3.2, note 2",
+          "version": "rev.1, juin 2025",
+          "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+          "langue": "en",
+          "consulte_le": "2026-10-23",
+          "extrait": "“MDSW intended to monitor medication adherence (e.g. to inhaled medication), allows patient control of asthma and influences the use of the medical device (e.g. inhaler).”"
+        }
+      ],
+      "statut": "à valider par l'équipe"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "CAS-02",
+  "titre": "Analyse d'imagerie pour la prise en charge de l'AVC aigu, avec modules annexes",
+  "vague": 1,
+  "auteur": "Exemple fourni avec l'outil",
+  "cas_limite": false,
+  "description": "Plateforme hospitalière : un module importe les scanners cérébraux depuis le PACS, un module d'IA analyse les images pour aider à décider du traitement des patients en phase aiguë d'AVC, un module gère la facturation de l'abonnement.",
+  "saisie": {
+    "format": "boussole-dm/saisie",
+    "version": 1,
+    "reference_cas": "CAS-02",
+    "description": "Analyse d'imagerie cérébrale par IA pour décider du traitement de l'AVC aigu en urgence ; import des images et facturation.",
+    "revendications": [
+      { "support": "notice", "texte": "Aide au diagnostic de l'AVC ischémique aigu par analyse automatique du scanner, pour orienter la décision de traitement en urgence." },
+      { "support": "site", "texte": "Notre algorithme d'apprentissage profond détecte l'occlusion des gros vaisseaux en moins de deux minutes." }
+    ],
+    "modules": [
+      {
+        "id": "import", "nom": "Import des images", "fonction": "Récupère les images DICOM depuis le PACS et les transmet au module d'analyse", "donnees": "Images DICOM", "finalite": "Acheminer les images",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "non", "P-2": "oui" }
+      },
+      {
+        "id": "analyse", "nom": "Analyse AVC", "fonction": "Détecte l'occlusion des gros vaisseaux et produit un résultat pour décider du traitement", "donnees": "Scanner cérébral", "finalite": "Aide au diagnostic de l'AVC aigu",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "oui", "Q-5": "oui", "Q-6": ["diag_maladie"], "Q-7": "aucune_ivd",
+                      "R11-1": "oui", "R11-2": "deces", "R11-T1": "critique", "R11-T2": "traiter", "R11-3": "non", "R15": "non", "R22": "non" }
+      },
+      {
+        "id": "facturation", "nom": "Facturation", "fonction": "Gère l'abonnement de l'établissement", "donnees": "Données comptables", "finalite": "Facturer le service",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "oui", "Q-5": "non", "P-2": "non", "P-3": "Reçoit du module d'analyse le nombre d'examens traités chaque mois (aucune donnée de patient)." }
+      }
+    ],
+    "reponses": { "IA-1": "oui" }
+  },
+  "attendu": {
+    "modules": {
+      "import": { "qualification": "non_dm", "perimetre": "necessaire", "classe": null },
+      "analyse": { "qualification": "dm_mdr", "perimetre": "dm", "classe": "III" },
+      "facturation": { "qualification": "non_dm", "perimetre": "hors", "classe": null }
+    },
+    "classe_produit": "III",
+    "organisme_notifie": true,
+    "zones_grises": ["ZG-3", "ZG-8"],
+    "consequences": ["PROC-II-III", "PROC-III-CLIN", "IA-HAUT-RISQUE", "IA-INDEP"]
+  },
+  "justification": [
+    { "point": "Le module d'analyse correspond à l'exemple de classe III du guide.", "source": "MDCG 2019-11 rev.1", "reference": "Annexe IV", "extrait": "“MDSW intended to perform diagnosis by means of image analysis for making treatment decisions in patients with acute stroke should be classified as class III under Rule 11(a)”" },
+    { "point": "Le module d'import ne fait que transmettre des données, mais il est nécessaire au module DM.", "source": "MDCG 2019-11 rev.1", "reference": "Section 7", "extrait": "“Non-medical functionalities should not be excluded from the MDSW description if they are necessary for the operation of the MDSW;”" },
+    { "point": "La facturation n'est pas au bénéfice d'un patient et n'est pas nécessaire au DM.", "source": "MDCG 2019-11 rev.1", "reference": "Section 3.1", "extrait": "“software only intended for non-medical purposes […] such as invoicing […] do not qualify as MDSW.”" },
+    { "point": "Système d'IA dans un DM de classe III, évalué par un organisme notifié : haut risque.", "source": "MDCG 2025-6", "reference": "Question 2, tableau 1", "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”" }
+  ]
+}

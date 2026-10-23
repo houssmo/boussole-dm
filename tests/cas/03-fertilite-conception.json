@@ -1,0 +1,37 @@
+{
+  "id": "CAS-03",
+  "titre": "Application de suivi de fertilité revendiquée pour la conception (cas limite)",
+  "vague": 1,
+  "auteur": "Exemple fourni avec l'outil",
+  "cas_limite": true,
+  "description": "Application qui calcule le statut de fertilité du jour à partir de la température basale et des dates de règles saisies, avec un algorithme statistique validé, et l'affiche par un voyant rouge, vert ou jaune. Elle est revendiquée pour aider à concevoir. Le même algorithme pourrait servir à éviter une grossesse : c'est ce qui en fait un cas limite.",
+  "saisie": {
+    "format": "boussole-dm/saisie",
+    "version": 1,
+    "reference_cas": "CAS-03",
+    "description": "Calcul du statut de fertilité (ovulation) à partir de la température basale et du cycle, pour aider à la conception.",
+    "revendications": [
+      { "support": "boutique", "texte": "Identifiez vos jours fertiles pour mettre toutes les chances de votre côté lors de votre projet de conception." }
+    ],
+    "modules": [
+      {
+        "id": "fertilite", "nom": "Statut de fertilité", "fonction": "Calcule le statut de fertilité du jour et prédit l'ovulation", "donnees": "Température basale, dates de règles", "finalite": "Aider à la conception",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "oui", "Q-5": "oui", "Q-6": ["conception"], "Q-7": "aucune_ivd",
+                      "R11-1": "non", "R11-3": "non", "R15": "non", "R22": "non" }
+      }
+    ],
+    "reponses": { "IA-1": "non" }
+  },
+  "attendu": {
+    "modules": { "fertilite": { "qualification": "dm_mdr", "perimetre": "dm", "classe": "I" } },
+    "classe_produit": "I",
+    "organisme_notifie": false,
+    "zones_grises": ["ZG-1", "ZG-9"],
+    "consequences": ["PROC-I"]
+  },
+  "justification": [
+    { "point": "L'aide à la conception est une finalité médicale : la maîtrise ou l'assistance de la conception figure dans la définition du DM.", "source": "MDCG 2019-11 rev.1 (citant l'article 2, point 1, du MDR)", "reference": "Section 2", "extrait": "“devices for the control or support of conception;”" },
+    { "point": "Le guide classe cette application en classe I (sous-règle 11c).", "source": "MDCG 2019-11 rev.1", "reference": "Annexe IV", "extrait": "“This MDSW app should be classified as class I per Rule 11c.”" },
+    { "point": "La règle 15 ne vise pas l'aide à la conception ; utilisée pour la contraception, l'application passerait en IIb (zone grise ZG-9).", "source": "MDCG 2021-24 rev.1", "reference": "Règle 15", "extrait": "“Devices for fertility monitoring or testing to facilitate conception (and not used in contraception) are not covered by this rule.”" }
+  ]
+}

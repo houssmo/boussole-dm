@@ -1,0 +1,42 @@
+{
+  "_aide": "Gabarit d'un cas de test. Copiez ce fichier sous un nom parlant (ex. 04-telesurveillance.json), remplissez chaque champ et supprimez les champs « _aide ». Les réponses utilisent les identifiants des règles de data/regles.json et les valeurs de leurs options.",
+  "id": "CAS-00",
+  "titre": "Titre court du cas",
+  "vague": 1,
+  "auteur": "Prénom de la personne qui a rédigé le cas",
+  "cas_limite": false,
+  "description": "Description de l'application en quelques phrases : ce qu'elle fait, pour qui, dans quel contexte de soins.",
+  "saisie": {
+    "format": "boussole-dm/saisie",
+    "version": 1,
+    "reference_cas": "CAS-00",
+    "description": "Même description que ci-dessus (elle sert au rapprochement avec les exemples MDCG).",
+    "revendications": [
+      { "support": "notice | site | boutique | plaquette | etiquetage | autre", "texte": "Revendication recopiée telle quelle" }
+    ],
+    "modules": [
+      {
+        "id": "m1",
+        "nom": "Nom du module",
+        "fonction": "Ce que fait le module",
+        "donnees": "Données traitées",
+        "finalite": "Finalité revendiquée",
+        "reponses": { "Q-1": "oui", "Q-2": "non", "Q-3": "non", "Q-4": "oui", "Q-5": "oui", "Q-6": ["diag_maladie"], "Q-7": "aucune_ivd" }
+      }
+    ],
+    "reponses": { "IA-1": "non" }
+  },
+  "attendu": {
+    "_aide": "Ne mettez que ce que le cas doit vérifier. classe_produit : I, IIa, IIb, III ou null (aucune classe). zones_grises et consequences : identifiants qui DOIVENT apparaître (d'autres peuvent apparaître aussi).",
+    "modules": {
+      "m1": { "qualification": "dm_mdr", "perimetre": "dm", "classe": "IIa" }
+    },
+    "classe_produit": "IIa",
+    "organisme_notifie": true,
+    "zones_grises": ["ZG-1"],
+    "consequences": ["PROC-II-III"]
+  },
+  "justification": [
+    { "point": "Pourquoi ce résultat est attendu", "source": "Document officiel", "reference": "Section, article ou annexe", "extrait": "Citation exacte, entre guillemets" }
+  ]
+}

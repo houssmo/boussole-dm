@@ -1,0 +1,545 @@
+{
+  "meta": {
+    "version_donnees": "0.2.0",
+    "mis_a_jour_le": "2026-10-23",
+    "usage": "Le moteur rapproche les exemples du cas traité par mots-clés (revendications, fonctions et finalités des modules). Les classes indiquées sont celles des guides, pour la destination décrite dans l'exemple."
+  },
+  "exemples": [
+    {
+      "id": "EX-01",
+      "description": "Analyse d'images pour décider du traitement d'un AVC aigu",
+      "mots_cles": [
+        "image",
+        "imagerie",
+        "avc",
+        "accident vasculaire",
+        "urgence",
+        "scanner",
+        "irm"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "III",
+      "regle": "R11-2",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“MDSW intended to perform diagnosis by means of image analysis for making treatment decisions in patients with acute stroke should be classified as class III under Rule 11(a)”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-02",
+      "description": "Thérapie cognitive : le spécialiste choisit la thérapie à partir du résultat du logiciel",
+      "mots_cles": [
+        "thérapie",
+        "cognitif",
+        "dépression",
+        "santé mentale",
+        "psychologie"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIa",
+      "regle": "R11-1",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“When a specialist determines the necessary cognitive therapy based on the outcome provided by the MDSW, the MDSW would be classified as class IIa per Rule 11(a).”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-03",
+      "description": "Thérapie cognitive qui adapte elle-même le traitement à partir de son diagnostic",
+      "mots_cles": [
+        "thérapie",
+        "cognitif",
+        "dépression",
+        "boucle fermée",
+        "adaptatif"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "III",
+      "regle": "R22",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Cognitive therapy MDSW that includes a diagnostic function which is intended to feed back to the software to determine follow-up therapy, e.g. software adapts treatment of depression based on diagnostic feedback, should be in class III per Rule 22.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-04",
+      "description": "Surveillance continue des processus physiologiques vitaux en anesthésie, réanimation ou urgence",
+      "mots_cles": [
+        "surveillance",
+        "monitorage",
+        "paramètres vitaux",
+        "réanimation",
+        "soins intensifs",
+        "anesthésie",
+        "urgence"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIb",
+      "regle": "R11-4",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Medical devices including MDSW intended to be used for continuous surveillance of vital physiological processes in anaesthesia, intensive care or emergency care should be classified as class IIb per (Rule 11(b)).”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-05",
+      "description": "Surveillance de processus non vitaux, ou relevés de signaux vitaux en contrôle de routine ou à domicile",
+      "mots_cles": [
+        "surveillance",
+        "domicile",
+        "tension",
+        "routine",
+        "relevé"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIa",
+      "regle": "R11-3",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Medical devices, including MDSW intended to monitor physiological processes that are not considered to be vital, and devices intended to be used to obtain readings of vital physiological signals in routine check-ups including monitoring at home should be classified as class IIa (Rule 11(b)).”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-06",
+      "description": "Application qui analyse le rythme cardiaque, détecte des anomalies et informe un médecin",
+      "mots_cles": [
+        "cœur",
+        "cardiaque",
+        "rythme",
+        "ecg",
+        "arythmie",
+        "montre",
+        "smartphone"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIb",
+      "regle": "R11-2",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“A mobile app intended to analyse a user’s heartbeat, detect abnormalities and inform a physician accordingly should be classified as class IIb per Rule 11(a), if the information provided by the software is intended to guide the physician in the diagnosis.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-07",
+      "description": "Score diagnostique de dépression à partir des symptômes saisis",
+      "mots_cles": [
+        "dépression",
+        "score",
+        "questionnaire",
+        "symptômes",
+        "anxiété",
+        "santé mentale"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIb",
+      "regle": "R11-2",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Diagnostic MDSW intended for scoring depression based on inputted data on a patient’s symptoms (e.g. mood, anxiety) should be classified as class IIb under Rule 11(a),”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-08",
+      "description": "Classement des options de chimiothérapie pour un professionnel de santé",
+      "mots_cles": [
+        "chimiothérapie",
+        "cancer",
+        "oncologie",
+        "recommandation",
+        "aide à la décision"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIa",
+      "regle": "R11-1",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“MDSW that lists and ranks all available chemotherapy options for BRCA-positive individuals, should be classified as class IIa per Rule 11(a)”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-09",
+      "description": "Application d'aide à la conception (statut de fertilité du jour)",
+      "mots_cles": [
+        "fertilité",
+        "ovulation",
+        "cycle",
+        "conception",
+        "température"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "I",
+      "regle": "R11-5",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe IV",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“This MDSW app should be classified as class I per Rule 11c.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-10",
+      "description": "Logiciel utilisé pour la contraception",
+      "mots_cles": [
+        "contraception",
+        "fertilité",
+        "cycle",
+        "température"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "IIb",
+      "regle": "R15",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Section 4.2.4",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Software used for contraception will be classified as class IIb.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-11",
+      "description": "Logiciel d'analyse de mélanome qui pilote un scanner laser",
+      "mots_cles": [
+        "mélanome",
+        "dermatologie",
+        "peau",
+        "scanner",
+        "laser",
+        "cancer"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": "III",
+      "regle": "AP-3.3",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Section 4.1",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“The MDSW would be classified as class III based on Rule 11 (see section Classification Rules) and per implementing rule 3.5 of Annex VIII.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-12",
+      "description": "Système d'information hospitalier (admissions, rendez-vous, facturation)",
+      "mots_cles": [
+        "administratif",
+        "rendez-vous",
+        "planning",
+        "facturation",
+        "admission",
+        "dpi"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe I, a)",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“HIS are not in themselves qualified as medical devices.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-13",
+      "description": "Télémédecine qui transmet et affiche sans interpréter",
+      "mots_cles": [
+        "télémédecine",
+        "transmission",
+        "affichage",
+        "téléconsultation"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-4",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe I, d.1)",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“Telemedicine that solely transfers and displays information for monitoring purposes without interpreting data does not qualify as a medical device.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-14",
+      "description": "Module d'alarmes fondées sur l'analyse de paramètres physiologiques du patient",
+      "mots_cles": [
+        "alarme",
+        "alerte",
+        "seuil",
+        "surveillance",
+        "paramètres"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe I, d)",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“A software module generating alarms based on the monitoring and analysis of patient specific physiological parameters is qualified as a medical device (MDSW).”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-15",
+      "description": "Tableau de bord des indicateurs d'un laboratoire (volumes, délais)",
+      "mots_cles": [
+        "laboratoire",
+        "indicateurs",
+        "tableau de bord",
+        "délais",
+        "qualité"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-5",
+      "source": {
+        "document": "MDCG 2019-11 rev.1, Guidance on Qualification and Classification of Software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+        "cle": "MDCG2019-11",
+        "reference": "Annexe II, exemple 1",
+        "version": "rev.1, juin 2025",
+        "url": "https://health.ec.europa.eu/document/download/b45335c5-1679-4c71-a91c-fc7a4d37f12b_en?filename=mdcg_2019_11_en.pdf",
+        "langue": "en",
+        "consulte_le": "2026-10-23",
+        "extrait": "“The conclusion is that the software does not fall under the Medical Devices Regulations.”"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-16",
+      "description": "Calcul de dose d'insuline à partir des glycémies et du protocole du médecin",
+      "mots_cles": [
+        "insuline",
+        "diabète",
+        "dose",
+        "glycémie"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « Logiciel ou application de calcul de dose – DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Par cette destination et ces caractéristiques, cette application peut être qualifiée de dispositif médical. »"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-17",
+      "description": "Télésurveillance à domicile avec alertes",
+      "mots_cles": [
+        "télésurveillance",
+        "alerte",
+        "domicile",
+        "insuffisance cardiaque",
+        "diabète"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « télésurveillance du patient avec notion d'alertes – DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Par conséquent, ce type de logiciel analysant des données de signaux physiologiques propres à un patient et doté de fonctions d'alertes dans un but de suivi médical à distance sera qualifié de dispositif médical. »"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-18",
+      "description": "Questionnaire d'autosurveillance qui oriente vers une consultation ou les urgences",
+      "mots_cles": [
+        "triage",
+        "orientation",
+        "urgences",
+        "symptômes",
+        "questionnaire",
+        "conseil"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « autosurveillance… – Pas DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Un logiciel dont la finalité est uniquement le conseil au patient d'aller consulter ou non un professionnel de santé, spécialiste ou services d'urgence ne répond pas à la définition du dispositif médical car il ne délivre par de diagnostic, ni une aide au traitement. »"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-19",
+      "description": "Logiciel d'aide à la prescription qui détecte contre-indications et interactions",
+      "mots_cles": [
+        "prescription",
+        "interactions",
+        "contre-indications",
+        "médicament",
+        "posologie",
+        "pharmacie"
+      ],
+      "qualification_indiquee": "dm_mdr",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « Les logiciels d'aide à la prescription et à la dispensation – DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Si une base de données médicaments (BDM) a des fonctionnalités de LAP ou LAD, c'est un DM. Dans le cas contraire, ce n'en est pas un. »"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-20",
+      "description": "Application de rééquilibrage alimentaire",
+      "mots_cles": [
+        "nutrition",
+        "alimentation",
+        "diététique",
+        "régime",
+        "poids",
+        "menus"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « Les logiciels destinés au rééquilibrage alimentaire – Pas DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Aussi, un logiciel destiné à apporter des conseils diététiques ou à permettre une prise en charge nutritionnelle ne répond pas à la définition du dispositif médical au titre du règlement 2017/745. »"
+      },
+      "statut": "à valider par l'équipe"
+    },
+    {
+      "id": "EX-21",
+      "description": "Podomètre avec programme d'entraînement contre la sédentarité",
+      "mots_cles": [
+        "podomètre",
+        "pas",
+        "sédentarité",
+        "activité physique",
+        "sport",
+        "entraînement",
+        "coach"
+      ],
+      "qualification_indiquee": "non_dm",
+      "classe_indiquee": null,
+      "regle": "Q-6",
+      "source": {
+        "document": "ANSM, « Le logiciel ou l'application santé que je vais mettre sur le marché relève-t-il (elle) du statut de DM ou de DM DIV ? »",
+        "cle": "ANSM-QUALIF",
+        "reference": "Exemple « Applications pour prescrire la pratique d'entrainements sportifs ou physiques – Pas DM »",
+        "version": "mise à jour du 06/01/2026",
+        "url": "https://ansm.sante.fr/documents/reference/le-logiciel-ou-lapplication-sante-que-je-vais-mettre-sur-le-marche-releve-t-il-du-statut-de-dispositif-medical-dm-ou-de-dispositif-medical-de-diagnostic-in-vitro-dm-div",
+        "langue": "fr",
+        "consulte_le": "2026-10-23",
+        "extrait": "« Une application, présentée comme un podomètre, calcule le nombre de pas sur plusieurs jours. En fonction du résultat, l'application va évaluer le niveau de sédentarité de l'utilisateur. »"
+      },
+      "statut": "à valider par l'équipe"
+    }
+  ]
+}
