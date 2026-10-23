@@ -52,6 +52,7 @@ Ce document décrit le contrat entre les données et le moteur. Le moteur (`src/
 - `extrait` et `consulte_le` se renseignent ensemble.
 - Une entrée passe à « à valider par l'équipe » dès qu'**au moins une** source officielle a été lue. Toute source encore non lue (par exemple le texte du MDR sur EUR-Lex) doit alors être signalée dans `note_verification`. Ces deux règles sont contrôlées automatiquement.
 - `forme_extrait` (facultatif) signale un extrait recomposé : ligne de tableau dont la mise en page sépare les cellules, ou passage coupé par une note de bas de page et marqué « […] ».
+- `fragments_verification` (facultatif, avec `forme_extrait`) : liste des morceaux, tels qu'ils figurent dans le document, que `tests/verifier-extraits.mjs` doit retrouver pour valider un extrait recomposé.
 
 ### Conditions
 

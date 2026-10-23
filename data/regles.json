@@ -2588,7 +2588,16 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class I (non-sterile, non-measuring, non-",
+            "reusable surgical)",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2017/745 (MDR)",
@@ -2628,7 +2637,15 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class IIa, IIb, III Yes Yes",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2017/745 (MDR)",
@@ -2668,7 +2685,15 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class IIa, IIb, III Yes Yes",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2017/745 (MDR)",
@@ -2712,7 +2737,15 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class IIa, IIb, III Yes Yes",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2017/745 (MDR)",
@@ -2983,7 +3016,16 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class I (non-sterile, non-measuring, non-",
+            "reusable surgical)",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2024/1689 (AI Act)",
@@ -3045,7 +3087,16 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class I (non-sterile, non-measuring, non-",
+            "reusable surgical)",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
@@ -3096,7 +3147,15 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class IIa, IIb, III — Notified Body Involved? Yes — AIA High-Risk (Art. 6(1)) conditions fulfilled? Yes”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class IIa, IIb, III Yes Yes",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "MDCG 2021-24 rev.1, Guidance on classification of medical devices",
@@ -3477,7 +3536,16 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class I (non-sterile, non-measuring, non-",
+            "reusable surgical)",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         }
       ],
       "statut": "à valider par l'équipe"
@@ -3746,7 +3814,16 @@
           "langue": "en",
           "consulte_le": "2026-10-23",
           "extrait": "“MDR Class I (non-sterile, non-measuring, non-reusable surgical) — Notified Body Involved? No — AIA High-Risk (Art. 6(1)) conditions fulfilled? No”",
-          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules"
+          "forme_extrait": "ligne du tableau 1 recomposée : la mise en page du PDF sépare les cellules",
+          "fragments_verification": [
+            "MDR Class I (non-sterile, non-measuring, non-",
+            "reusable surgical)",
+            "Notified Body",
+            "Involved?",
+            "AIA High-Risk (Art.",
+            "6(1)) conditions",
+            "fulfilled?"
+          ]
         },
         {
           "document": "Règlement (UE) 2024/1689 (AI Act)",

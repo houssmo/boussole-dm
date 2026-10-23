@@ -47,8 +47,14 @@ export function validerRegles(doc, exemples = { exemples: [] }) {
   };
 
   // Parcourt une condition et vérifie les références qu'elle contient.
+  // Formes admises d'une condition (voir docs/format-regles.md) : toute autre clé est une faute de frappe.
+  const FORMES = [['tous'], ['un_de'], ['non'], ['qualification_dans'], ['perimetre_dans'], ['classe'], ['classe_dans'],
+    ['reponse', 'egal'], ['reponse', 'dans'], ['reponse', 'contient_un_de'], ['texte', 'contient_un_de'], ['modules', 'condition']];
   const verifierCondition = (ou, c) => {
     if (!c || typeof c !== 'object') return;
+    const cles = Object.keys(c).sort().join(',');
+    if (!FORMES.some((f) => [...f].sort().join(',') === cles)) erreurs.push(`${ou} : condition de forme inconnue ${JSON.stringify(c).slice(0, 80)}`);
+    if (c.modules && !['aucun', 'au_moins_un', 'tous'].includes(c.modules)) erreurs.push(`${ou} : quantificateur inconnu « ${c.modules} »`);
     if (c.reponse && !idsRegles.has(c.reponse)) erreurs.push(`${ou} : condition sur une règle inconnue ${c.reponse}`);
     for (const q of c.qualification_dans ?? []) if (!(q in qualifications)) erreurs.push(`${ou} : qualification inconnue ${q}`);
     for (const p of c.perimetre_dans ?? []) if (!(p in perimetres)) erreurs.push(`${ou} : périmètre inconnu ${p}`);
@@ -58,7 +64,11 @@ export function validerRegles(doc, exemples = { exemples: [] }) {
     if (c.non) verifierCondition(ou, c.non);
     if (c.condition) verifierCondition(ou, c.condition);
   };
+  const TYPES_EFFET = ['qualification', 'fin_module', 'perimetre', 'interface', 'classe', 'classe_indicative', 'agregation_classes', 'consequence', 'zone_grise', 'signal'];
   const verifierEffet = (ou, e) => {
+    if (!TYPES_EFFET.includes(e.type)) erreurs.push(`${ou} : type d'effet inconnu « ${e.type} »`);
+    if (e.type === 'signal' && !['info', 'avertissement', 'bloquant'].includes(e.gravite)) erreurs.push(`${ou} : gravité de signal inconnue « ${e.gravite} »`);
+    if (e.type === 'agregation_classes' && e.methode !== 'maximum') erreurs.push(`${ou} : méthode d'agrégation inconnue « ${e.methode} »`);
     if (e.type === 'qualification' && !(e.valeur in qualifications)) erreurs.push(`${ou} : qualification inconnue ${e.valeur}`);
     if (e.type === 'perimetre' && !(e.valeur in perimetres)) erreurs.push(`${ou} : périmètre inconnu ${e.valeur}`);
     if ((e.type === 'classe' || e.type === 'classe_indicative') && !meta.ordre_classes.includes(e.valeur)) erreurs.push(`${ou} : classe inconnue ${e.valeur}`);
@@ -79,6 +89,9 @@ export function validerRegles(doc, exemples = { exemples: [] }) {
     const valeurs = new Set((r.options ?? []).map((o) => o.valeur));
     for (const eff of r.effets ?? []) {
       if (eff.si !== undefined) {
+        if (typeof eff.si !== 'string' && !(Object.keys(eff.si).length === 1 && ['contient_un_de', 'egal_exactement'].includes(Object.keys(eff.si)[0]))) {
+          erreurs.push(`${ou} : « si » de forme inconnue ${JSON.stringify(eff.si)}`);
+        }
         const cites = typeof eff.si === 'string' ? [eff.si] : [...(eff.si.contient_un_de ?? []), ...(eff.si.egal_exactement ?? [])];
         for (const v of cites) if (!valeurs.has(v)) erreurs.push(`${ou} : effet sur une option inexistante « ${v} »`);
         for (const e of eff.alors ?? []) verifierEffet(ou, e);

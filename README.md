@@ -1,5 +1,7 @@
 # Boussole DM
 
+**Site : https://houssmo.github.io/boussole-dm/** (après activation de GitHub Pages, voir [docs/mise-en-ligne.md](docs/mise-en-ligne.md))
+
 > **Outil pédagogique, sans valeur réglementaire.** Aucune donnée réelle de patient ou d'entreprise.
 
 Outil web qui aide à qualifier un logiciel au regard du règlement (UE) 2017/745 (MDR), à délimiter la partie du produit qui relève du dispositif médical, à le classer et à en tirer les conséquences réglementaires. Chaque étape affiche sa source officielle. Projet de TD du Master SNPS (UE Réglementation des DM et du numérique en santé, UPJV Amiens).
@@ -33,3 +35,13 @@ npm run test:ui     # test de fumée de l'interface (Playwright ; lancer npm sta
 ```
 
 Node 18 ou plus récent, aucune dépendance à installer.
+
+## Documentation
+
+- [Ajouter ou modifier une règle](docs/ajouter-une-regle.md) : le guide de l'équipe
+- [Format de regles.json](docs/format-regles.md)
+- [Rédiger et rejouer les cas de test](docs/cas-de-test.md)
+- [Mise en ligne](docs/mise-en-ligne.md)
+- [Journal des sources](docs/journal-sources.md) et [points à vérifier](docs/points-a-verifier.md)
+
+Vérifier un extrait recopié contre le document officiel : `node tests/verifier-extraits.mjs <CLE> <document.pdf|.html|.txt>`
