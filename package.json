@@ -5,10 +5,12 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "npx --yes http-server -c-1 -p 8080 .",
     "test": "node tests/valider-regles.js && node --test tests/moteur.test.js && node tests/run.js",
     "test:donnees": "node tests/valider-regles.js",
     "test:moteur": "node --test tests/moteur.test.js",
-    "test:cas": "node tests/run.js"
+    "test:cas": "node tests/run.js",
+    "test:ui": "node tests/ui/fumee.mjs"
   },
   "engines": {
     "node": ">=18"

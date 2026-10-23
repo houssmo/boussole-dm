@@ -810,7 +810,8 @@
         },
         {
           "valeur": "aucune",
-          "libelle": "Aucune de ces finalités (par exemple bien-être, forme physique, gestion administrative)"
+          "libelle": "Aucune de ces finalités (par exemple bien-être, forme physique, gestion administrative)",
+          "exclusive": true
         }
       ],
       "choix_multiple": true,

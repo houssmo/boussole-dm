@@ -28,7 +28,7 @@ Ce document décrit le contrat entre les données et le moteur. Le moteur (`src/
 | `champ_saisie` | non | Pour une `saisie` dont la réponse est un champ de la saisie plutôt qu'une réponse : seule valeur admise, `revendications` (règle D-1). |
 | `portee` | oui | `module` : posée ou évaluée pour chaque module. `produit` : une seule fois. |
 | `question` | sauf déduction | Texte affiché. |
-| `options` | pour `question` | Liste de `{ "valeur", "libelle" }`. `choix_multiple: true` autorise plusieurs réponses. |
+| `options` | pour `question` | Liste de `{ "valeur", "libelle" }`. `choix_multiple: true` autorise plusieurs réponses ; une option `"exclusive": true` (ex. « aucune ») décoche les autres. |
 | `condition` | non (oui pour une déduction) | Quand la question est posée ou la déduction appliquée (voir plus bas). |
 | `effets` | oui | Ce que la règle produit (voir plus bas). |
 | `zones_grises` | non | Ids de zones grises à signaler quand la question est posée. |

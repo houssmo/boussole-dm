@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boussole DM</title>
+  <meta name="description" content="Outil pédagogique d'aide à la qualification et à la classification des logiciels selon le règlement (UE) 2017/745. Sans valeur réglementaire.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+  <link rel="stylesheet" href="src/styles.css">
+  <script type="module" src="src/ui/app.js"></script>
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <p class="bandeau" role="note">Outil pédagogique, sans valeur réglementaire</p>
+
+  <header class="entete">
+    <a class="entete__logo" href="./" aria-label="Boussole DM, accueil">
+      <span class="logo logo--clair"><img src="assets/logo/source/logo-complet.jpg" alt="Boussole DM" width="2000" height="1116"></span>
+      <span class="logo logo--sombre"><img src="assets/logo/source/logo-complet-sombre.jpg" alt="Boussole DM" width="2000" height="1116"></span>
+    </a>
+    <p class="entete__sous-titre">Qualifier, délimiter et classer un logiciel au regard du règlement (UE) 2017/745</p>
+  </header>
+
+  <nav class="etapes" aria-label="Étapes du passage" id="etapes" hidden></nav>
+
+  <main id="contenu" tabindex="-1">
+    <noscript><p class="alerte alerte--bloquant">Boussole DM a besoin de JavaScript pour fonctionner.</p></noscript>
+    <p class="chargement" id="chargement">Chargement des règles…</p>
+  </main>
+
+  <div class="annonce" id="annonce" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="pied">
+    <p><strong>Outil pédagogique, sans valeur réglementaire.</strong> N'y saisissez aucune donnée réelle de patient ou d'entreprise. Les passages sont enregistrés uniquement dans votre navigateur.</p>
+    <p>Projet de TD du Master SNPS, UPJV Amiens. Sources : EUR-Lex, guides MDCG (Commission européenne), ANSM.</p>
+  </footer>
+</body>
+</html>
