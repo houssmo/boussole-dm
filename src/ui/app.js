@@ -13,7 +13,7 @@ const CAS_DEMO = [
   ['03-fertilite-conception', 'Fertilité et conception (cas limite)'],
 ];
 
-const etat = { regles: null, exemples: null, passage: null, res: null, etape: 'accueil', stockageOk: true, replies: new Set() };
+const etat = { regles: null, exemples: null, passage: null, res: null, etape: 'accueil', stockageOk: true, replies: new Set(), rapportComplet: false };
 const main = document.getElementById('contenu');
 const nav = document.getElementById('etapes');
 const annonce = document.getElementById('annonce');
@@ -392,8 +392,11 @@ function vueRapport() {
     h('div', { class: 'actions ne-pas-imprimer' },
       h('button', { type: 'button', class: 'btn', onclick: () => window.print() }, 'Imprimer ou enregistrer en PDF'),
       h('button', { type: 'button', class: 'btn btn--secondaire', onclick: () => stockage.exporterPassage(etat.passage, etat.regles.meta.version_donnees) }, 'Exporter le passage (JSON)'),
-      h('button', { type: 'button', class: 'btn btn--discret', onclick: () => allerA('destination') }, 'Modifier une réponse')),
-    rapport(etat.passage, etat.res, etat.regles));
+      h('button', { type: 'button', class: 'btn btn--discret', onclick: () => allerA('destination') }, 'Modifier une réponse'),
+      h('label', { class: 'option', for: 'rapport-complet' },
+        h('input', { type: 'checkbox', id: 'rapport-complet', checked: etat.rapportComplet, onchange: (e) => { etat.rapportComplet = e.target.checked; afficher(); } }),
+        h('span', {}, 'Version complète (avec les extraits des sources)'))),
+    rapport(etat.passage, etat.res, etat.regles, { complet: etat.rapportComplet }));
 }
 
 demarrer();

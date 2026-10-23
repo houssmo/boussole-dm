@@ -57,6 +57,10 @@ const texteRapport = await p.locator('.rapport').innerText();
 ok(texteRapport.includes('Outil pédagogique, sans valeur réglementaire'), 'mention dans le rapport');
 ok(texteRapport.includes('Étapes suivies et sources') && texteRapport.includes('R11-2'), 'étapes suivies avec leurs règles');
 ok(texteRapport.includes('health.ec.europa.eu') || (await p.locator('.rapport a[href*="health.ec.europa.eu"]').count()) > 0, 'liens vers les sources officielles');
+ok(!texteRapport.includes('Annexe : extraits'), 'rapport court par défaut (sans annexe des extraits)');
+await p.getByLabel(/Version complète/).check();
+ok((await p.locator('.rapport').innerText()).includes('Annexe : extraits des sources citées'), 'version complète : annexe des extraits');
+await p.getByLabel(/Version complète/).uncheck();
 await capture(p, '08-rapport');
 if (CAPTURES) await p.pdf({ path: `${CAPTURES}/rapport.pdf`, format: 'A4', margin: { top: '15mm', bottom: '15mm', left: '12mm', right: '12mm' } });
 

@@ -222,8 +222,8 @@ th { font-family: var(--serif); color: var(--marine); }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; word-break: break-all; }
   .annexe-sources a::after { content: none; }
   .badge, .statut { background: none !important; color: #000 !important; border: 1px solid #000; }
-  table.trace { font-size: 8.5pt; } table.trace tr { break-inside: avoid; }
-  .annexe-sources { font-size: 9pt; } .annexe-sources li { break-inside: avoid; }
+  table.trace { font-size: 8pt; table-layout: fixed; } table.trace tr { break-inside: avoid; } table.trace td, table.trace th { padding: 3px 5px; }
+  .annexe-sources { font-size: 9pt; } .annexe-sources.annexe-sources--courte { font-size: 8pt; } .annexe-sources li { break-inside: avoid; }
   .annexe-sources a { word-break: break-all; }
   details.source > summary { display: none; }
   details.source { display: block; }
@@ -245,3 +245,5 @@ details:not([open]) > .carte__titre { margin-bottom: 0; }
   .resume dl { display: none; }
   .resume__classe { font-size: 1.5rem; }
 }
+
+.annexe-sources--courte { list-style: decimal; padding-left: 2em; gap: 2px; font-size: .88rem; }

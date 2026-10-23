@@ -42,14 +42,17 @@ function registreSources() {
   const refs = (objet) => h('p', { class: 'source__meta' }, 'Sources : ',
     objet.sources.map((src, i) => [i ? ' ; ' : '', `[${numero(src)}] ${src.document.split(',')[0]} — ${src.reference}`, src.extrait ? '' : ' (à lire)']),
     ' · ', pastilleStatut(objet.statut));
-  const annexe = () => h('ol', { class: 'source__liste annexe-sources' }, [...entrees.values()].map(({ n, src }) => h('li', { value: n, class: 'source__item' },
-    h('div', {}, h('strong', {}, src.document), ' — ', src.reference),
-    src.extrait ? h('blockquote', { lang: src.langue ?? 'fr' }, src.extrait) : h('p', { class: 'a-lire' }, 'Texte non encore lu.'),
-    h('div', { class: 'source__meta' }, `Version : ${src.version}`, src.consulte_le ? ` · consulté le ${new Date(src.consulte_le).toLocaleDateString('fr-FR')}` : '', ' · ', h('a', { href: src.url }, src.url)))));
+  // Version complète : extrait de chaque source. Version courte : une ligne par source (document, référence, lien).
+  const annexe = (complet) => h('ol', { class: 'source__liste annexe-sources' + (complet ? '' : ' annexe-sources--courte') }, [...entrees.values()].map(({ n, src }) => complet
+    ? h('li', { value: n, class: 'source__item' },
+        h('div', {}, h('strong', {}, src.document), ' — ', src.reference),
+        src.extrait ? h('blockquote', { lang: src.langue ?? 'fr' }, src.extrait) : h('p', { class: 'a-lire' }, 'Texte non encore lu.'),
+        h('div', { class: 'source__meta' }, `Version : ${src.version}`, src.consulte_le ? ` · consulté le ${new Date(src.consulte_le).toLocaleDateString('fr-FR')}` : '', ' · ', h('a', { href: src.url }, src.url)))
+    : h('li', { value: n }, h('strong', {}, src.document.split(',')[0]), ` — ${src.reference} (${src.version})`, src.extrait ? '' : ' — texte à lire', ' · ', h('a', { href: src.url }, 'lien officiel'))));
   return { refs, annexe, numero };
 }
 
-export function rapport(passage, res, regles) {
+export function rapport(passage, res, regles, { complet = false } = {}) {
   const saisie = passage.saisie;
   const reg = registreSources();
   const parId = new Map(regles.regles.map((r) => [r.id, r]));
@@ -119,13 +122,14 @@ export function rapport(passage, res, regles) {
     h('h2', {}, 'Étapes suivies et sources'),
     h('p', { class: 'source__meta' }, 'Une ligne par règle appliquée, dans l’ordre des étapes. Les numéros renvoient aux extraits en annexe.'),
     h('div', { class: 'tableau-defilant' }, h('table', { class: 'trace' },
+      h('colgroup', {}, ['13%', '9%', '43%', '27%', '8%'].map((l) => h('col', { style: `width:${l}` }))),
       h('thead', {}, h('tr', {}, ['Étape', 'Règle', 'Question et réponse', 'Effet', 'Sources'].map((t) => h('th', { scope: 'col' }, t)))),
       h('tbody', {}, res.trace.map((t) => {
         const r = parId.get(t.regle);
         const reponse = r.champ_saisie ? `${saisie.revendications.length} revendication(s)` : libelleReponse(r, t.reponse);
         return h('tr', {},
           h('td', {}, etapeTitre[t.etape], t.module ? h('div', { class: 'source__meta' }, nomModule(t.module)) : null),
-          h('td', {}, h('span', { class: 'id-regle' }, t.regle), h('div', {}, pastilleStatut(r.statut))),
+          h('td', {}, h('span', { class: 'id-regle' }, t.regle), complet ? h('div', {}, pastilleStatut(r.statut)) : null),
           h('td', {}, r.question ? [r.question, h('div', {}, h('strong', {}, '→ '), reponse)] : h('em', {}, 'Déduction automatique')),
           h('td', {}, descriptionEffets(t.effets, regles).join(' · ') || '—'),
           h('td', {}, r.sources.map((src) => `[${reg.numero(src)}]`).join(' ')));
@@ -140,9 +144,11 @@ export function rapport(passage, res, regles) {
       h('p', {}, 'Ces réponses ont été saisies, mais les questions correspondantes ne se posent plus dans ce chemin : ',
         res.reponses_ignorees.map((x) => `${x.regle}${x.module ? ` (${nomModule(x.module)})` : ''}`).join(', '))] : null,
 
-    h('h2', {}, 'Annexe : extraits des sources citées'),
-    h('p', { class: 'source__meta' }, 'Chaque extrait est numéroté une seule fois ; les numéros entre crochets renvoient ici.'),
-    reg.annexe(),
+    h('h2', {}, complet ? 'Annexe : extraits des sources citées' : 'Sources citées'),
+    h('p', { class: 'source__meta' }, complet
+      ? 'Chaque extrait est numéroté une seule fois ; les numéros entre crochets renvoient ici.'
+      : 'Les numéros entre crochets renvoient à cette liste. Les extraits exacts figurent dans la version complète du rapport et sous chaque question de l’outil.'),
+    reg.annexe(complet),
 
     h('p', { class: 'rapport__bandeau' }, 'Outil pédagogique, sans valeur réglementaire. Ce rapport ne constitue ni une qualification ni une classification opposable.'),
   );
